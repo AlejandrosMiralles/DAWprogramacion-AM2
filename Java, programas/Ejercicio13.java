@@ -32,7 +32,7 @@ public class Ejercicio13 {
             }
         }else{
             if (opcion == 1){
-                System.out.println(numero1+"\n\n"+numero2) ;
+                System.out.println(numero1+"\n\n\n"+numero2) ;
             }else{
                 System.out.println(numero2+"\n\n"+numero1) ;
             }
