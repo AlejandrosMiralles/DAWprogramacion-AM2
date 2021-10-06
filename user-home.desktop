@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=pcmanfm-qt /home/alumno
+Icon=user-home
+Name=alumno
