@@ -5,87 +5,41 @@ import java.util.Scanner ;
 public class Ejercicio33 {
     public static void main(String[] args) {
 
-        int dni , resto ;
+        int dni ;
         Scanner lector = new Scanner(System.in) ;
-
+        String[] array = new String[23] ;
 
         System.out.println("Dame un DNI y te daré la versión española del mismo:") ;
         dni = lector.nextInt() ;
 
         lector.close() ;
 
-        resto = dni%23 ;
+        //Defino el array, que dará la letra según el resto del DNI
 
-        switch (resto){
-            case 0: 
-                    System.out.println("El DNi es: "+dni+"T") ;
-                    break ;
-            case 1: 
-                    System.out.println("El DNi es: "+dni+"R") ;
-                    break ;
-            case 2: 
-                    System.out.println("El DNi es: "+dni+"W") ;
-                    break ;
-            case 3: 
-                    System.out.println("El DNi es: "+dni+"A") ;
-                    break ;
-            case 4: 
-                    System.out.println("El DNi es: "+dni+"G") ;
-                    break ;
-            case 5: 
-                    System.out.println("El DNi es: "+dni+"M") ;
-                    break ;
-            case 6: 
-                    System.out.println("El DNi es: "+dni+"Y") ;
-                    break ;
-            case 7: 
-                    System.out.println("El DNi es: "+dni+"F") ;
-                    break ;
-            case 8: 
-                    System.out.println("El DNi es: "+dni+"P") ;
-                    break ;
-            case 9: 
-                    System.out.println("El DNi es: "+dni+"D") ;
-                    break ;
-            case 10: 
-                    System.out.println("El DNi es: "+dni+"X") ;
-                    break ;
-            case 11: 
-                    System.out.println("El DNi es: "+dni+"B") ;
-                    break ;
-            case 12: 
-                    System.out.println("El DNi es: "+dni+"N") ;
-                    break ;
-            case 13: 
-                    System.out.println("El DNi es: "+dni+"J") ;
-                    break ;
-            case 14: 
-                    System.out.println("El DNi es: "+dni+"Z") ;
-                    break ;
-            case 15: 
-                    System.out.println("El DNi es: "+dni+"S") ;
-                    break ;
-            case 16: 
-                    System.out.println("El DNi es: "+dni+"Q") ;
-                    break ;
-            case 17: 
-                    System.out.println("El DNi es: "+dni+"V") ;
-                    break ;
-            case 18: 
-                    System.out.println("El DNi es: "+dni+"H") ;
-                    break ;
-            case 19: 
-                    System.out.println("El DNi es: "+dni+"L") ;
-                    break ;
-            case 20: 
-                    System.out.println("El DNi es: "+dni+"C") ;
-                    break ;
-            case 21: 
-                    System.out.println("El DNi es: "+dni+"K") ;
-                    break ;
-            default: 
-                    System.out.println("El DNi es: "+dni+"E") ;
-                    break ;
-        }
+        array[0] = "T" ;
+        array[1] = "R" ;
+        array[2] = "W" ;
+        array[3] = "A" ;
+        array[4] = "G" ;
+        array[5] = "M" ;
+        array[6] = "Y" ;
+        array[7] = "F" ;
+        array[8] = "P" ;
+        array[9] = "D" ;
+        array[10] = "X" ;
+        array[11] = "B" ;
+        array[12] = "N" ;
+        array[13] = "J" ;
+        array[14] = "Z" ;
+        array[15] = "S" ;
+        array[16] = "Q" ;
+        array[17] = "V" ;
+        array[18] = "H" ;
+        array[19] = "L" ;
+        array[20] = "C" ;
+        array[21] = "K" ;
+        array[22] = "E" ;
+        
+        System.out.println("El DNI es: "+dni+array[dni%23]) ;
     }
 }
