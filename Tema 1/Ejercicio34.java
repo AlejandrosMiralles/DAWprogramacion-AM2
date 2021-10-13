@@ -1,3 +1,5 @@
+//Programa que calcula la letra de un NIe a partir del número
+
 import java.util.Scanner ;
 
 public class Ejercicio34 {
