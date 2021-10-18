@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejercicio43",
+            "request": "launch",
+            "mainClass": "Ejercicio43",
+            "projectName": "DAWprogramacion-AM4_9784aaa1"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
