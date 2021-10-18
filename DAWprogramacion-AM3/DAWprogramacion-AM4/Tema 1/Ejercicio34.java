@@ -1,4 +1,4 @@
-//Programa que calcula la letra de un NIe a partir del número
+//Programa que calcula la letra de un NIE a partir del número
 
 import java.util.Scanner ;
 
