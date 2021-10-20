@@ -14,8 +14,6 @@ public class Ejercicio24 {
         do{
             System.out.println("Dame una nota:") ;
 
-
-
             ++contador ;
 
             media= media+nota ;
