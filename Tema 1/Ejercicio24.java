@@ -39,9 +39,5 @@ public class Ejercicio24 {
         }
         
         lector.close() ;
-
-
-
-    }
-    
+    }  
 }
