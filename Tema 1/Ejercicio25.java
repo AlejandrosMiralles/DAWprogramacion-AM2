@@ -15,7 +15,7 @@ public class Ejercicio25 {
         if (numero<0){
             System.out.println("El número debe ser un número natural.") ;
         }else if(numero == 0){
-            System.out.println("EL factorial de 0 es 0.") ;
+            System.out.println("EL factorial de 0 es 1.") ;
         }else{
             for (int i = 1; i <= numero; ++i){
                 resultado = resultado * i ;
