@@ -1,0 +1,343 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Ejercicio45",
+            "request": "launch",
+            "mainClass": "Ejercicio45",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Control01",
+            "request": "launch",
+            "mainClass": "Control01",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1",
+            "request": "launch",
+            "mainClass": "Ejercicio1",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio10",
+            "request": "launch",
+            "mainClass": "Ejercicio10",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio11",
+            "request": "launch",
+            "mainClass": "Ejercicio11",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio12",
+            "request": "launch",
+            "mainClass": "Ejercicio12",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio13",
+            "request": "launch",
+            "mainClass": "Ejercicio13",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio14",
+            "request": "launch",
+            "mainClass": "Ejercicio14",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio15",
+            "request": "launch",
+            "mainClass": "Ejercicio15",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio16",
+            "request": "launch",
+            "mainClass": "Ejercicio16",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17",
+            "request": "launch",
+            "mainClass": "Ejercicio17",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio18",
+            "request": "launch",
+            "mainClass": "Ejercicio18",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio19",
+            "request": "launch",
+            "mainClass": "Ejercicio19",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "mainClass": "Ejercicio2",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio20",
+            "request": "launch",
+            "mainClass": "Ejercicio20",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio21",
+            "request": "launch",
+            "mainClass": "Ejercicio21",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio22",
+            "request": "launch",
+            "mainClass": "Ejercicio22",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio23",
+            "request": "launch",
+            "mainClass": "Ejercicio23",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio24",
+            "request": "launch",
+            "mainClass": "Ejercicio24",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio25",
+            "request": "launch",
+            "mainClass": "Ejercicio25",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio26",
+            "request": "launch",
+            "mainClass": "Ejercicio26",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio27",
+            "request": "launch",
+            "mainClass": "Ejercicio27",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio28",
+            "request": "launch",
+            "mainClass": "Ejercicio28",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio29",
+            "request": "launch",
+            "mainClass": "Ejercicio29",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3",
+            "request": "launch",
+            "mainClass": "Ejercicio3",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio30",
+            "request": "launch",
+            "mainClass": "Ejercicio30",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio31",
+            "request": "launch",
+            "mainClass": "Ejercicio31",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio32",
+            "request": "launch",
+            "mainClass": "Ejercicio32",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio33",
+            "request": "launch",
+            "mainClass": "Ejercicio33",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio34",
+            "request": "launch",
+            "mainClass": "Ejercicio34",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio35",
+            "request": "launch",
+            "mainClass": "Ejercicio35",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio36",
+            "request": "launch",
+            "mainClass": "Ejercicio36",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio37",
+            "request": "launch",
+            "mainClass": "Ejercicio37",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio38",
+            "request": "launch",
+            "mainClass": "Ejercicio38",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio39",
+            "request": "launch",
+            "mainClass": "Ejercicio39",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4",
+            "request": "launch",
+            "mainClass": "Ejercicio4",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio40",
+            "request": "launch",
+            "mainClass": "Ejercicio40",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio41",
+            "request": "launch",
+            "mainClass": "Ejercicio41",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio42",
+            "request": "launch",
+            "mainClass": "Ejercicio42",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio43",
+            "request": "launch",
+            "mainClass": "Ejercicio43",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio44",
+            "request": "launch",
+            "mainClass": "Ejercicio44",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio47",
+            "request": "launch",
+            "mainClass": "Ejercicio47",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5",
+            "request": "launch",
+            "mainClass": "Ejercicio5",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6",
+            "request": "launch",
+            "mainClass": "Ejercicio6",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio7",
+            "request": "launch",
+            "mainClass": "Ejercicio7",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio8",
+            "request": "launch",
+            "mainClass": "Ejercicio8",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio9",
+            "request": "launch",
+            "mainClass": "Ejercicio9",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        }
+    ]
+}
