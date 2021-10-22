@@ -5,27 +5,26 @@ import java.lang.Math ;
 
 public class Ejercicio44 {
     public static void main(String[] args) {
-        
-        int numDec = 0 , numBin, remainder ;
+        String numBin ;
+        int numDec = 0 ;
+        boolean binary = true ;
         Scanner input = new Scanner(System.in) ;
 
-        System.out.println("Give me a binary number(positive or negative) and I will return you that number in decimal:");
-        numBin = input.nextInt() ;
+        System.out.println("Give me a binary number(only an enter positive) and I will return you that number in decimal:");
+        numBin = input.next() ;
         input.close() ;
 
-        if (numBin == 0 || numBin == 1){
-            numDec = numBin ;
-
-        }else{
-            for (int i= (int) Math.log10(numBin) ; i>= 0 ; --i){
-                remainder = numBin % (int) Math.pow(10.0, (double)i) ;
-                numBin /= Math.pow(10.0, (double)i) ;
-
-                if (remainder==0){
-                    numDec+= Math.pow(2.0, (double)i) ;
-                }
+        for (int i=0 ; i<numBin.length() ; ++i){
+            if ('1'== numBin.charAt(i)){
+                numDec+= Math.pow(2.0, (double)(numBin.length()-1-i)) ;
+            }else if ('0'!= numBin.charAt(i)){
+                binary = false ;
             }
         }
-        System.out.println("Binary: "+numDec);
+        if (binary){
+            System.out.println("Decimal: "+numDec);
+        }else{
+            System.out.println("Dame solo el número binario.");
+        }
     }
 }
