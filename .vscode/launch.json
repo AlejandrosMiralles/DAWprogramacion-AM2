@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejercicio46",
+            "request": "launch",
+            "mainClass": "Ejercicio46",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejercicio45",
             "request": "launch",
             "mainClass": "Ejercicio45",
