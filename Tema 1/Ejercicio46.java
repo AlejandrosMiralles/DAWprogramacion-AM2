@@ -12,7 +12,7 @@ public class Ejercicio46 {
 
         System.out.println("Let's play a game. I think a number,a secret number, and you have to guess it. ");
         System.out.println("If you want to give up, type '-1'.");
-        System.out.println(secretnumber);
+
 
         do{
             System.out.println("Give me a number:");
