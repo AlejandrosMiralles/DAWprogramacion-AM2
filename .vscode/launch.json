@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Esdivisible",
+            "request": "launch",
+            "mainClass": "Esdivisible",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
             "name": "Launch Matesprueba",
             "request": "launch",
             "mainClass": "Matesprueba",
