@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Mates",
+            "request": "launch",
+            "mainClass": "Mates",
+            "projectName": "DAWprogramacion-AM2_a580fc58"
+        },
+        {
+            "type": "java",
             "name": "Launch Descendente",
             "request": "launch",
             "mainClass": "Descendente",
