@@ -12,7 +12,7 @@ public class Estriangulo {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in) ;
 
-        System.out.println("Give 3 sides of an triangle, and I'll tell if they can form a traingle:");
+        System.out.println("Give 3 sides of an triangle, and I'll tell ypu if they can form a triangle:");
         if (canbe(input.nextInt(), input.nextInt(), input.nextInt())){
             System.out.println("They can form a triangle.");
         }else{
