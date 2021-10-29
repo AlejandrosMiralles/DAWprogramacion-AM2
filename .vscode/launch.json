@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Entradaprueba",
+            "request": "launch",
+            "mainClass": "Entradaprueba",
+            "projectName": "DAWprogramacion-AM2_9784aa9f"
+        },
+        {
+            "type": "java",
             "name": "Launch Primos",
             "request": "launch",
             "mainClass": "Primos",

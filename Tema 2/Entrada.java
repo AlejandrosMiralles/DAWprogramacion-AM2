@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Entrada {
     public static int getinteger(){
-        String number;
+        String number, fnumber = "";
         Scanner input = new Scanner(System.in) ;
         boolean impconv, negative ;
         
@@ -10,11 +10,12 @@ public class Entrada {
             impconv = false ;
             negative = false ;
 
-            System.out.println("Give me an enter number:");
-            number = input.next() ;
+            System.out.println("Give me an integer number:");
+            number = input.nextLine() ;
 
             for (int i=0; i<number.length(); ++i){
                 switch(number.charAt(i)){
+                    case ' ':
                     case '0':
                     case '1':
                     case '2':
@@ -42,19 +43,25 @@ public class Entrada {
                 }
             }
             if (impconv){
-                System.out.println("Please, give me an enter number. Just it. \n\n");
+                System.out.println("Please, give me an integer number. Just it. \n\n");
             }
         }while(impconv) ;
 
         input.close() ;
-        return Integer.parseInt(number) ;
+
+        for (int i=0; i<number.length(); ++i){
+            if (number.charAt(i)!= ' '){
+                fnumber += number.charAt(i) ;
+            }
+        }
+        return Integer.parseInt(fnumber) ;
     }
 
 
 
 
     public static double getdouble(){
-        String number;
+        String number, fnumber = "";
         Scanner input = new Scanner(System.in) ;
         boolean impconv, decimal, negative ;
         
@@ -64,10 +71,11 @@ public class Entrada {
             negative = false ;
 
             System.out.println("Give me a number:");
-            number = input.next() ;
+            number = input.nextLine() ;
 
             for (int i=0; i<number.length(); ++i){
                 switch(number.charAt(i)){
+                    case ' ':
                     case '0':
                     case '1':
                     case '2':
@@ -107,6 +115,12 @@ public class Entrada {
         }while(impconv) ;
 
         input.close() ;
-        return Double.parseDouble(number) ;
+
+        for (int i=0; i<number.length(); ++i){
+            if (number.charAt(i)!= ' '){
+                fnumber += number.charAt(i) ;
+            }
+        }
+        return Double.parseDouble(fnumber) ;
     }
 }
