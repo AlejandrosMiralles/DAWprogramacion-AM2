@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Sonpositivos",
+            "request": "launch",
+            "mainClass": "Sonpositivos",
+            "projectName": "DAWprogramacion-AM2_9784aa9f"
+        },
+        {
+            "type": "java",
             "name": "Launch Potencia",
             "request": "launch",
             "mainClass": "Potencia",
