@@ -2,8 +2,6 @@ public class Primo {
     public static boolean prime(int number){
         boolean primo= true ;
 
-
-
         if (number<0){
             primo = false ;
             return primo ;
@@ -21,11 +19,6 @@ public class Primo {
                 }
             }  
         }
-
         return primo ;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(prime(2));
     }
 }
