@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E05",
+            "request": "launch",
+            "mainClass": "Control02.E05",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch P116HolaMundo",
             "request": "launch",
             "mainClass": "P116HolaMundo",
