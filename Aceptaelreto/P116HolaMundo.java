@@ -7,5 +7,6 @@ public class P116HolaMundo {
         for (int i= input.nextInt(); i>0; --i){
             System.out.println("Hola mundo.");
         }
+        input.close();
     }
 }
