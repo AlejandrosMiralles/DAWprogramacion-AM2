@@ -48,7 +48,7 @@ public class P616TrenyAndenV1 {
         posiciones = new int[posicionesnum];
 
 
-        //Darle valores a la variable posiciones
+        //Darle valores a la variable posiciones.
         for (int i=0; i<posicionesnum; ++i){
             posiciones[i]= input.nextInt();
         }
