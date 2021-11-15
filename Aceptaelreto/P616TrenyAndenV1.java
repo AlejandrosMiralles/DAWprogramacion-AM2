@@ -1,8 +1,8 @@
 //https://www.aceptaelreto.com/problem/statement.php?id=614
 
-//Supongo que las puertas NO tienen ningún orden en especifico.
+//Supongo que las puertas SÍ tienen un orden en especifico.Están todas juntas
 
-//FRACASO:Da bucle infinito.
+//Éxito, pero muy lento/algún fallo no detectado.
 
 import java.util.Scanner;
 
@@ -28,7 +28,6 @@ public class P616TrenyAndenV1 {
             if (long1>long2){
                 long1 = long2;
             }
-
         }
 
         return long1 ;
