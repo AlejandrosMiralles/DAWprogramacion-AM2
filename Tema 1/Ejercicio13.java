@@ -22,7 +22,7 @@ public class Ejercicio13 {
 
 
         if (opcion != 1 && opcion != 2){
-            System.out.println("Escoge una de las dos opciones. No te inventes otras.") ;
+            System.out.println("Escoge una de las dos opciones.No te inventes otras.") ;
 
         }else if (numero1>numero2){
             if (opcion == 1){
