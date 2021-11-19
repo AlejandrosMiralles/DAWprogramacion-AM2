@@ -30,7 +30,7 @@ public class Duplicados {
     }
 
     public static void main(String[] args) {
-        int[] lista5= BibliotecaArrays.rellenaArray(50, -10, 10);
+        int[] lista5= BibliotecaArrays.rellenaArray(100, -20, 20);
         
        
         System.out.print("\n\n\nLista 5.0: ");
@@ -39,7 +39,6 @@ public class Duplicados {
         }
 
         lista5= repetidos(lista5);
-
 
         System.out.print("\n\n\nLista 5.5: ");
         for (int i=0; i<lista5.length; ++i){
