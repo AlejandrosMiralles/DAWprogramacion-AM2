@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Duplicados",
+            "request": "launch",
+            "mainClass": "Duplicados",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch P616TrenyAndenV1",
             "request": "launch",
             "mainClass": "P616TrenyAndenV1",
