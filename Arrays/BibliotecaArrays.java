@@ -11,7 +11,7 @@ public class BibliotecaArrays {
             System.out.print(numero+" ");
         }*/
 
-        /*Prueba para agregar una swerie de numeros a una lista
+        /*Prueba para agregar una serie de numeros a una lista
         int[] aagregar = {35, 24, 74, 96, 48, 12};
         for (int numero: agregarEnteros(lista, aagregar)){
             System.out.print(numero+" ");
@@ -28,9 +28,9 @@ public class BibliotecaArrays {
             return lista;
         }
        
-        while (indice>lista.length || indice<=0){
+        while (indice>lista.length || indice<0){
 
-            if (indice<=0){
+            if (indice<0){
                 System.out.println("Perdone, pero el indice ha de ser superior a 0.\n"+
                                     "Escriba otro indice:");
             }else{
@@ -41,7 +41,7 @@ public class BibliotecaArrays {
             indice= input.nextInt();
         }
         input.close();
-        --indice;
+
 
         for (int i=lista.length-1; i>=indice; --i){
             numero2= lista[i];
@@ -76,6 +76,16 @@ public class BibliotecaArrays {
         return lista;
     }
 
+
+	public static int[] rellenaArray(int tamano, int min, int max) {
+        int[] array= new int[tamano];
+
+		for (int i = 0; i < array.length; i++) {
+			int aleatorio = (int) (Math.random() * (max - min + 1) + min);
+			array[i] = aleatorio;
+		}
+        return array;
+    }
 
 
 }
