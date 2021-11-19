@@ -74,7 +74,7 @@ public class E08 {
 
         input.close(); 
 
-        return Double.parseDouble(fnumber);  
+        return Double.parseDouble(fnumber) ; 
     }
 
     public static void main(String[] args) {
@@ -93,6 +93,5 @@ public class E08 {
         numeroint = (int)numero ;
 
         System.out.println(numero-numeroint);
-        System.out.println(13-13.19);
     }
 }

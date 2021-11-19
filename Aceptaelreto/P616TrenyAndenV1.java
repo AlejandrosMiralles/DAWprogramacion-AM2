@@ -35,12 +35,13 @@ public class P616TrenyAndenV1 {
 
 
     public static void main(String[] args) {
+
         
         int puertas, posicionesnum, longitud = 10000000 ;
         int posiciones[];
         Scanner input = new Scanner(System.in);
 
-        
+
         puertas = input.nextInt() ;
         posicionesnum = input.nextInt();
 
@@ -53,12 +54,18 @@ public class P616TrenyAndenV1 {
             posiciones[i]= input.nextInt();
         }
 
+
+        double startTime = System.nanoTime();
+
         input.close();
+
 
         if (puertas>=posicionesnum){
             longitud = 0 ;
         }else{
             System.out.println(callong(posiciones, puertas, longitud));
         }
+        double stopTime = System.nanoTime();
+        System.out.println("Tiempo: "+(stopTime-startTime)+"nanosegundos o "+((stopTime-startTime)/1000000000.0)+" segundos.");
     }
 }
