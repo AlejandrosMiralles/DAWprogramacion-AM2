@@ -7,8 +7,8 @@ public class Duplicados {
         for (int i=0; i<numeros.length-repeticiones; ++i){
             repe = new int[0];
 
-            for (int j=0; j<numeros.length; ++j){
-                if (numeros[i]==numeros[j]){
+            for (int j=0; j<numeros.length-repeticiones; ++j){
+                if (numeros[i]==numeros[j] && i==j){
                     repeticiones++;
                     repe= BibliotecaArrays.agregarEntero(repe,j);
                 }
@@ -19,7 +19,7 @@ public class Duplicados {
             }
 
             for (int posicion : repe){
-                numeros = BibliotecaArrays.eliminarNumero(numeros, posicion);
+                numeros = BibliotecaArrays.alFinal(numeros, posicion);
             }
 
         }
@@ -28,12 +28,12 @@ public class Duplicados {
     }
 
     public static void main(String[] args) {
-        int[] lista5= BibliotecaArrays.rellenaArray(100, -10, 10);
+        int[] lista5= BibliotecaArrays.rellenaArray(10, -10, 10);
        
         lista5= repetidos(lista5);
 
 
-        System.out.print("\nLista 5: ");
+        System.out.print("\n\n\nLista 5: ");
         for (int i=0; i<lista5.length; ++i){
             System.out.print(lista5[i]+"  ");
         }
