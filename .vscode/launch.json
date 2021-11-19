@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SumaIgual",
+            "request": "launch",
+            "mainClass": "SumaIgual",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch Comunes",
             "request": "launch",
             "mainClass": "Comunes",

@@ -84,6 +84,17 @@ public class BibliotecaArrays {
         return lista;
     }
 
+    public static int[][] agregarMatriz(int[][] lista, int[] aagregar) {
+        //Agrega una fila en una matriz
+
+        int[][] lista2= new int[lista.length+1][];
+
+        System.arraycopy(lista, 0, lista2, 0, lista.length);
+        lista2[lista2.length-1]= aagregar;
+
+        return lista2;
+    }
+
 
 	public static int[] rellenaArray(int tamano, int min, int max) {
         //Rellena un array nuevo de un tamaño con numeros aleatorios
