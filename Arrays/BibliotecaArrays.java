@@ -1,3 +1,5 @@
+//JAVASE-11
+
 import java.util.Scanner;
 
 public class BibliotecaArrays {
@@ -18,10 +20,12 @@ public class BibliotecaArrays {
         }*/
     }
 
-    public static int[] EliminarNumero(int[] lista, int indice) {
+    public static int[] eliminarNumero(int[] lista, int indice) { 
+        //ELIMINA el número en el índice indicado
+
         Scanner input = new Scanner(System.in);
         int numero=0, numero2;
-        int[] lista2 = new int[lista.length-2];
+        int[] lista2 = new int[lista.length-1];
 
         if (lista.length==0){
             input.close();
@@ -59,7 +63,9 @@ public class BibliotecaArrays {
         return lista2;
     }
 
-    public static int[] AgregarEntero(int[] numeros, int numero) {
+    public static int[] agregarEntero(int[] numeros, int numero) {
+        //Agrega un entero a una lista
+
         int[] lista2= new int[numeros.length+1];
 
         System.arraycopy(numeros, 0, lista2, 0, numeros.length);
@@ -70,14 +76,18 @@ public class BibliotecaArrays {
     }
 
     public static int[] agregarEnteros(int[] lista, int[] numeros) {
+        //Agrega una lista de enteros a otra lista
+
         for (int i=0; i<numeros.length; ++i){
-            lista= AgregarEntero(lista, numeros[i]);
+            lista= agregarEntero(lista, numeros[i]);
         }
         return lista;
     }
 
 
 	public static int[] rellenaArray(int tamano, int min, int max) {
+        //Rellena un array nuevo de un tamaño con numeros aleatorios
+
         int[] array= new int[tamano];
 
 		for (int i = 0; i < array.length; i++) {
@@ -85,6 +95,43 @@ public class BibliotecaArrays {
 			array[i] = aleatorio;
 		}
         return array;
+    }
+
+    public static int[] alFinal(int[] lista, int indice) {
+        Scanner input = new Scanner(System.in);
+        int numero=0, numero2;
+    
+        if (lista.length==0){
+            input.close();
+            return lista;
+        }
+           
+        while (indice>lista.length || indice<0){
+    
+            if (indice<0){
+                System.out.println("Perdone, pero el indice ha de ser superior a 0.\n"+
+                                    "Escriba otro indice:");
+            }else{
+                System.out.println("Perdone, pero el indice supera el número de elementos del array.\n" +
+                                   "Vuelva a introducir un indice:");
+            }
+    
+            indice= input.nextInt();
+        }
+        input.close();
+    
+        for (int i=lista.length-1; i>=indice; --i){
+            numero2= lista[i];
+                
+            if (i==lista.length-1){
+                lista[i]=lista[indice];
+            }else{
+                lista[i]=numero;
+            }
+            numero=numero2;
+        }
+
+        return lista;
     }
 
 

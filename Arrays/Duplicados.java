@@ -10,17 +10,16 @@ public class Duplicados {
             for (int j=0; j<numeros.length; ++j){
                 if (numeros[i]==numeros[j]){
                     repeticiones++;
-                    repe= BibliotecaArrays.AgregarEntero(repe,j);
+                    repe= BibliotecaArrays.agregarEntero(repe,j);
                 }
             }
 
             if (repe.length>0){
-                repetidos = BibliotecaArrays.AgregarEntero(repetidos, numeros[i]);
+                repetidos = BibliotecaArrays.agregarEntero(repetidos, numeros[i]);
             }
 
             for (int posicion : repe){
-                System.out.println(posicion);
-                numeros = BibliotecaArrays.EliminarNumero(numeros, posicion+1);
+                numeros = BibliotecaArrays.eliminarNumero(numeros, posicion);
             }
 
         }

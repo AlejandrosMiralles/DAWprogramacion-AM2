@@ -13,7 +13,7 @@ public class Eliminar {
         return array;
     }
 
-    public static int[] EliminarNumero(int[] lista, int indice) {
+    public static int[] eliminarNumero(int[] lista, int indice) {
         Scanner input = new Scanner(System.in);
         int numero=0, numero2;
 
@@ -22,9 +22,9 @@ public class Eliminar {
             return lista;
         }
        
-        while (indice>lista.length || indice<=0){
+        while (indice>lista.length || indice<0){
 
-            if (indice<=0){
+            if (indice<0){
                 System.out.println("Perdone, pero el indice ha de ser superior a 0.\n"+
                                     "Escriba otro indice:");
             }else{
@@ -35,7 +35,6 @@ public class Eliminar {
             indice= input.nextInt();
         }
         input.close();
-        --indice;
 
         for (int i=lista.length-1; i>=indice; --i){
             numero2= lista[i];
@@ -57,11 +56,11 @@ public class Eliminar {
         int[] lista4= rellenaArray(4, 0, 100), lista5= rellenaArray(10, -10, 10);
        
 
-        lista1= EliminarNumero(lista1, 2);
-        lista2= EliminarNumero(lista2, 5);
-        lista3= EliminarNumero(lista3, 6);
-        lista4= EliminarNumero(lista4, 4);
-        lista5= EliminarNumero(lista5, 0);
+        lista1= eliminarNumero(lista1, 2);
+        lista2= eliminarNumero(lista2, 5);
+        lista3= eliminarNumero(lista3, 6);
+        lista4= eliminarNumero(lista4, 4);
+        lista5= eliminarNumero(lista5, 0);
 
 
         System.out.print("Lista 1: ");
