@@ -20,6 +20,13 @@ public class BibliotecaArrays {
         }*/
     }
 
+   public static void escribeArray(int[] lista) {
+    for (int i = 0; i < lista.length; i++) {
+        System.out.print(" "+lista[i]+" ");
+    }
+    System.out.println("");
+}
+
     public static int[] eliminarNumero(int[] lista, int indice) { 
         //ELIMINA el número en el índice indicado
 
@@ -109,6 +116,8 @@ public class BibliotecaArrays {
     }
 
     public static int[] alFinal(int[] lista, int indice) {
+        //Coloca el número en la posición array en un indice al final del array
+
         Scanner input = new Scanner(System.in);
         int numero=0, numero2;
     
@@ -120,10 +129,10 @@ public class BibliotecaArrays {
         while (indice>lista.length || indice<0){
     
             if (indice<0){
-                System.out.println("Perdone, pero el indice ha de ser superior a 0.\n"+
+                System.out.println("Perdone, pero el indice ha de ser superior o igual a 0.\n"+
                                     "Escriba otro indice:");
             }else{
-                System.out.println("Perdone, pero el indice supera el número de elementos del array.\n" +
+                System.out.println("Perdone, pero el indice supera o iguala el número de elementos del array.\n" +
                                    "Vuelva a introducir un indice:");
             }
     
