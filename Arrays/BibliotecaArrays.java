@@ -42,10 +42,10 @@ public class BibliotecaArrays {
         while (indice>lista.length || indice<0){
 
             if (indice<0){
-                System.out.println("Perdone, pero el indice ha de ser superior a 0.\n"+
+                System.out.println("Perdone, pero el indice ha de ser superior o igual a 0.\n"+
                                     "Escriba otro indice:");
             }else{
-                System.out.println("Perdone, pero el indice supera el número de elementos del array.\n" +
+                System.out.println("Perdone, pero el indice supera o iguala el número de elementos del array.\n" +
                                 "Vuelva a introducir un indice:");
             }
 
