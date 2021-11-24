@@ -10,6 +10,10 @@ public class Tablero {
             matriz= BibliotecaArrays.agregarMatriz(matriz, lista);
         }
 
+        for (int i = 0; i < matriz.length; i++) {
+            BibliotecaArrays.escribeArray(matriz[i]);;
+        }
+
         return matriz;
     }
 
@@ -36,12 +40,10 @@ public class Tablero {
     
         for (int i = 1; i < matrizStr.length; i++) {
             matrizStr[i][0]= columnainfo[i];
-        }
-        for (int j = 0; j < matrizStr.length; j++) {
-            matrizStr[0][j] = filainfo[j];
+            matrizStr[0][i]= filainfo[i];
         }
 
-        System.out.println("\n");
+        System.out.println("\n\n\n\n\n");
         for (int i = 0; i < matrizStr.length; i++) {
             for (int j = 0; j < matrizStr.length; j++) {
                 System.out.print(" "+matrizStr[i][j]+" ");
