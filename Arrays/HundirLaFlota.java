@@ -92,12 +92,20 @@ public class HundirLaFlota {
             System.out.println("SHOTS: "+shots+"\nSUNK SHIPS: "+sunk);
             mostrarTabla(playField);
 
-            System.out.print("Enter row (LETTER): ");
-            row = input.next().charAt(0);
-            rowInt= rowTranslator(row);
 
+            do{
+                System.out.print("Enter row (LETTER): ");
+            row = Character.toUpperCase(input.next().charAt(0));
+            rowInt= rowTranslator(row);
+            }while(row =='A' || row =='B' || row =='C' || row =='D' || row =='F' ||
+            row =='G' || row =='H');
+
+            do {
             System.out.print("Enter column (Number): ");
             column = input.nextInt();
+            }while(0<column && column<9);
+
+
 
 
             if (shipPlaces[rowInt-1][column-1]==1){
@@ -113,12 +121,19 @@ public class HundirLaFlota {
                 playField[rowInt][column] = "O";
             }
 
-            System.out.println("Do you want to stop: 'Yes' or 'no'?");
+            do{
+                System.out.println("Do you want to stop: 'Yes' or 'no'?");
             answer= input.next();
+            answer = answer.toLowerCase();
+            }while(answer.equals("yes") || answer.equals("no"));
+            
             if (answer.equals("yes")){
                 stop= true;
             }
         }
+
+
+
         input.close();
 
         System.out.println("Game ended");
