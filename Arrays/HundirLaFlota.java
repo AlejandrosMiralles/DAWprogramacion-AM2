@@ -97,13 +97,13 @@ public class HundirLaFlota {
                 System.out.print("Enter row (LETTER): ");
             row = Character.toUpperCase(input.next().charAt(0));
             rowInt= rowTranslator(row);
-            }while(row =='A' || row =='B' || row =='C' || row =='D' || row =='F' ||
-            row =='G' || row =='H');
+            }while(!(row =='A' || row =='B' || row =='C' || row =='D' || row =='E' ||
+            row =='F' || row =='G' || row =='H'));
 
             do {
             System.out.print("Enter column (Number): ");
             column = input.nextInt();
-            }while(0<column && column<9);
+            }while(!(0<column && column<9));
 
 
 
@@ -121,14 +121,16 @@ public class HundirLaFlota {
                 playField[rowInt][column] = "O";
             }
 
-            do{
-                System.out.println("Do you want to stop: 'Yes' or 'no'?");
-            answer= input.next();
-            answer = answer.toLowerCase();
-            }while(answer.equals("yes") || answer.equals("no"));
-            
-            if (answer.equals("yes")){
-                stop= true;
+            if (shots!=10){
+                do{
+                    System.out.println("Do you want to stop: 'Yes' or 'no'?");
+                answer= input.next();
+                answer = answer.toLowerCase();
+                }while(!(answer.equals("yes") || answer.equals("no")));
+
+                if (answer.equals("yes")){
+                    stop= true;
+                }
             }
         }
 
