@@ -78,6 +78,7 @@ public class HundirLaFlota {
         String[][] playField = createTable();
         int[][] shipPlaces=new int[8][8];
         int rowInt, column, sunk=0, shots=0;
+        double accuraccy;
         char row;
         boolean stop = false;
         String answer;
@@ -134,14 +135,14 @@ public class HundirLaFlota {
             }
         }
 
-
-
         input.close();
+        accuraccy = ((float)sunk/(float)shots)*100;
 
         System.out.println("Game ended");
         if (sunk==10){
             System.out.println("Congratulations. You beat the game!!");
         }
-        System.out.println("You shoted "+sunk+" ships.");
+        System.out.println("You shoted "+sunk+" ships. You neened "+shots+" shots.\n"+
+                "You have un accuraccy of "+accuraccy+"%.");
     }
 }

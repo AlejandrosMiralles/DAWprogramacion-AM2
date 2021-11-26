@@ -153,6 +153,4 @@ public class BibliotecaArrays {
 
         return lista;
     }
-
-
 }
