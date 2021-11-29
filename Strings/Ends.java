@@ -11,9 +11,9 @@ public class Ends {
 
         System.out.println(terminacion(str, str2));
         System.out.println(terminacion(str, str3));
-        System.out.println(terminacion(str, str4));
+        System.out.println(terminacion(str4, str));
         System.out.println(terminacion(str, str5));
         System.out.println(terminacion(str, str6));
-        System.out.println(terminacion(str, str7));
+        System.out.println(terminacion(str7, str));
     }
 }
