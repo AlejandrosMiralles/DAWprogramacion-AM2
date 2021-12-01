@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Pasatiempos",
+            "request": "launch",
+            "mainClass": "Pasatiempos",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Alfabetica",
             "request": "launch",
             "mainClass": "Alfabetica",
