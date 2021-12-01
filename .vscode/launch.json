@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Longitud2",
+            "request": "launch",
+            "mainClass": "Longitud2",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch SumaIgual",
             "request": "launch",
             "mainClass": "SumaIgual",
