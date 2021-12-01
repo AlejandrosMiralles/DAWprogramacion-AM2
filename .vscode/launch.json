@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Invertida",
+            "request": "launch",
+            "mainClass": "Invertida",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Parentesis",
             "request": "launch",
             "mainClass": "Parentesis",
