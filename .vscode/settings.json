@@ -1,10 +1,8 @@
 {
     "java.project.sourcePaths": [
-        "Tema 2",
-        "Tema 1",
-        "Controles",
         "Aceptaelreto",
-        "Arrays",
-        "Strings"
+        "Controles",
+        "Strings",
+        "Arrays"
     ]
 }

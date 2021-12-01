@@ -6,8 +6,7 @@ public class Digitos {
         int digitosCant=0;
 
         for (int i = 0; i < cadena.length(); i++) {
-            if (Character.isDigit(cadena.charAt(i))){
-                Character.isDigit(cadena.charAt(i)); 
+            if (Character.isDigit(cadena.charAt(i))){ 
                 ++digitosCant;
             }
         }

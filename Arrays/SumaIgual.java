@@ -4,8 +4,8 @@ public class SumaIgual {
         int[] par_aPoner;
 
         for (int i = 0; i < lista.length; i++) {
-            for (int j = 0; j < lista.length; j++) {
-                if (lista[i]+lista[j] == resultado && i!=j){
+            for (int j = i+1; j < lista.length; j++) {
+                if (lista[i]+lista[j] == resultado){
                     par_aPoner= new int[0];
                     par_aPoner= BibliotecaArrays.agregarEntero(par_aPoner, lista[i]);
                     par_aPoner= BibliotecaArrays.agregarEntero(par_aPoner, lista[j]);
