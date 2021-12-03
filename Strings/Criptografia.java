@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Criptografia {
     public static String encriptador(String cadena, int clave) {

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Palabras2",
+            "request": "launch",
+            "mainClass": "Palabras2",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
+            "name": "Launch Palabras1",
+            "request": "launch",
+            "mainClass": "Palabras1",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch Encriptar",
             "request": "launch",
             "mainClass": "Encriptar",
