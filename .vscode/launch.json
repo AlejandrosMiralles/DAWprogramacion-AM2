@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Encriptar",
+            "request": "launch",
+            "mainClass": "Encriptar",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch SumarBinario",
             "request": "launch",
             "mainClass": "SumarBinario",
