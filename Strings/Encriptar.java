@@ -33,11 +33,11 @@ public class Encriptar {
     public static void main(String[] args) {
         String cadena;
        // Scanner input = new Scanner(System.in);
-        int clave = 55, utfOcho;
+        int clave = 33, utfOcho;
         char encriptado;
 
         cadena = "Una de las tecnicas de criptografia mas rudimentarias consiste en sustituir cada uno de los caracteres por otro situado n posiciones mas a la derecha del abecedario. Si n = 2, sustituiremos la 'a' por la 'c', la 'b' por la 'd', y asi sucesivamente. El problema que aparece con las ultimas n letras del alfabeto tiene facil solucion: en el ejemplo, la letra 'y' se sustituye por la 'a' y la 'z' por la 'b'. La sustitucion debe aplicarse a las letras minusculas y mayusculas y a los digitos. Las letras no deben incluir caracteres no ingleses (es decir sin ni acentos)";
-
+ 
         /*
         System.out.println("Dame una frase: ");
         cadena = input.nextLine();
