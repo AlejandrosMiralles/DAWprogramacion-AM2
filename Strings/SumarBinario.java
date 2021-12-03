@@ -5,14 +5,14 @@ public class SumarBinario {
         int suma = 0, posicionY;
 
         if (x.length()<y.length()){
-            z = y;
+            z = x;
             x = y;
             y = z;
         }
 
 
         for (int i = x.length()-1; i >= 0; i--) {
-            posicionY = y.length() - 1 - (x.length()-i);
+            posicionY = y.length() - (x.length()-i);
             suma = 0;
 
 
@@ -43,6 +43,11 @@ public class SumarBinario {
             }
         }
 
+        
+        if (carrito){
+            resultado+='1';
+        }
+        
         char[] aInvertir = new char[resultado.length()];
         for (int i = 0; i < aInvertir.length; i++) {
             aInvertir[i] = resultado.charAt(i);
@@ -58,6 +63,7 @@ public class SumarBinario {
     }    
 
     public static void main(String[] args) {
-        System.out.println(sumaBin("100", "111"));
+        System.out.println(sumaBin("1101", "110"));
+        System.out.println(sumaBin("110", "1101"));
     }
 }
