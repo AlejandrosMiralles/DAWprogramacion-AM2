@@ -9,11 +9,7 @@ public class Encriptar {
     public static char encripDigitos(char digito, int clave) {
         int utfOcho = Character.getNumericValue(digito);
 
-        if (utfOcho+clave>9){
-            return Character.forDigit((utfOcho+clave)%10, 10);
-        }else{
-            return Character.forDigit(utfOcho+clave, 10);
-        }
+        return Character.forDigit((utfOcho+clave)%10, 10);
     }
 
     public static char encripLetra(char letra, int clave) {
@@ -25,11 +21,7 @@ public class Encriptar {
             highCase = true;
         }
 
-        if (utfOcho+clave>35){
-            codificado =  Character.forDigit(((utfOcho+clave)%26)+10, 36);
-        }else{
-            codificado = Character.forDigit(utfOcho+clave, 36);
-        }
+        codificado =  Character.forDigit(((utfOcho+clave)%26)+10, 36);
 
         if (highCase){
             codificado = Character.toUpperCase(codificado);
@@ -54,7 +46,7 @@ public class Encriptar {
         for (int i = 0; i < cadena.length(); i++) {
             utfOcho = Character.getNumericValue(cadena.charAt(i));
 
-            if (utfOcho<9 && utfOcho>=0){
+            if (utfOcho<=9 && utfOcho>=0){
                 encriptado = encripDigitos(cadena.charAt(i), clave);
             }else if (utfOcho<36 && utfOcho>0){
                 encriptado= encripLetra(cadena.charAt(i), clave);
