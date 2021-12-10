@@ -12,6 +12,9 @@ public class Palabras2 {
                 case '.':
                 case ',':
                 case ';':
+                case '\n':
+                case '(':
+                case ')':
                 //etc.
                     if (start){
                         fin = true;
