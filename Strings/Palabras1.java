@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class Palabras1 {
     public static String[] dividirEnPalabras(String cadena){
         // Quitar espacios en blanco al principio y al final
@@ -5,10 +7,15 @@ public class Palabras1 {
 
         // Reemplazar uno o más espacios en blanco por un solo espacio
 
-        /*cadena=cadena.replaceAll("(", " ");
-        cadena=cadena.replaceAll(")", " ");*/
+        
+        cadena=cadena.replaceAll(Pattern.quote("("), " ");
+        cadena=cadena.replaceAll(Pattern.quote(")"), " ");
+        cadena = cadena.replaceAll(Pattern.quote("\n"), " ");
+        cadena = cadena.replaceAll(Pattern.quote("."), " ");
+
         cadena=cadena.replaceAll(",", " ");
         cadena=cadena.replaceAll(" +", " ");
+        
         
         
         // Dividir la cadena en partes por el carácter espacio (devuelve un array con cada una de las partes)
