@@ -54,11 +54,11 @@ public class Palabras4 {
     }
 
     public static void main(String[] args) {
-        //https://jarroba.com/excepciones-exception-en-java-con-ejemplos/
 
         String cadena = leerfichero("./Carpeta_Directorios/fichero.txt");
 
         System.out.println("Hay "+Palabras2.contadorPalabras(cadena)+" palabras.");
-        
+       
+
     }
 }
