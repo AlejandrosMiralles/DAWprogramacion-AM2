@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FindOdd",
+            "request": "launch",
+            "mainClass": "FindOdd",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Palabras4",
             "request": "launch",
             "mainClass": "Palabras4",
