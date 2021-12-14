@@ -5,11 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Archivo actual",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "type": "java",
             "name": "Launch FindOdd",
             "request": "launch",
             "mainClass": "FindOdd",
-            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "python",
+            "name": "Launch descending_order.py",
+            "request": "launch",
+            "mainClass": "descendin_order.py",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
         },
         {
             "type": "java",
