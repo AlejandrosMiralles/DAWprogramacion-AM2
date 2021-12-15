@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Persistence",
+            "request": "launch",
+            "mainClass": "Persistence",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
             "name": "Python: Archivo actual",
             "type": "python",
             "request": "launch",
