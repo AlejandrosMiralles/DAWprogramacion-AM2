@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch KataJava",
+            "request": "launch",
+            "mainClass": "KataJava",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch JadenCase",
             "request": "launch",
             "mainClass": "JadenCase",
