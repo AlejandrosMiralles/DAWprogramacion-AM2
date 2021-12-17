@@ -11,11 +11,12 @@ public class Traductor {
     }
 
     public static boolean validador(String cadena) {
-        char letra;
 
         for (int i = 0; i < cadena.length(); i++) {
-            letra = cadena.charAt(i);
-            if (Character.)
+            if (!(1<Character.codePointAt(cadena, i) && Character.codePointAt(cadena, i))
+                || !lista.contains(cadena.charAt(i))){
+                    return false;
+            }
         }
         return true;
     }
