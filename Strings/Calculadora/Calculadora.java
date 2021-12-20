@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Calculadora {
     public static void main(String[] args) {
+
+       // double startTime = System.nanoTime();
+
         boolean acabar = false;
         String cadena;
         Traductor descodificador = new Traductor();
@@ -31,5 +34,8 @@ public class Calculadora {
         }
 
         input.close();
+
+    //    double stopTime = System.nanoTime();
+    //    System.out.println("Tiempo: "+(stopTime-startTime)+"nanosegundos o "+((stopTime-startTime)/1000000000.0)+" segundos.");
     }
 }

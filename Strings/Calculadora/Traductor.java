@@ -246,12 +246,19 @@ public class Traductor {
     public static void main(String[] args) {
         Traductor prueba = new Traductor();
 
+    //    double startTime = System.nanoTime();
+
         System.out.println(prueba.descodificar("45.1    + -60"));
         System.out.println(prueba.descodificar("3X2,900000"));
         System.out.println(prueba.descodificar("30.1 -- 9 "));
         System.out.println(prueba.descodificar("98 -- 3"));
         System.out.println(prueba.descodificar("-50 + 00000"));
         System.out.println(prueba.descodificar("4 - -3"));
+
+
+    //    double stopTime = System.nanoTime();
+    //    System.out.println("Tiempo: "+(stopTime-startTime)+"nanosegundos o "+((stopTime-startTime)/1000000000.0)+" segundos.");
+    
     }
    
 }
