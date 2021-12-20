@@ -2,8 +2,6 @@ package Control02;
 
 import java.util.Scanner; 
 
-
-
 public class E08 {
 
     public static double getdouble(){
@@ -65,10 +63,11 @@ public class E08 {
             decimal = false ;
 
             for (int i=0; i<number.length(); ++i){
-            if (number.charAt(i)!= ' ' && decimal){
-                fnumber += number.charAt(i) ;
-            }else if (number.charAt(i)=='.'){
-                decimal = true ;
+                if (number.charAt(i)!= ' ' && decimal){
+                    fnumber += number.charAt(i) ;
+                }else if (number.charAt(i)=='.'){
+                    decimal = true ;
+                }
             }
         }
 

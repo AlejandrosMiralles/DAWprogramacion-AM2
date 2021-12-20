@@ -5,11 +5,13 @@ import java.util.List;
 
 public class Traductor {
 
-    //public static String ans;
+    /*
+    public static String ans;
 
     public static void setAns(double resultado) {
         ans = Double.toString(resultado);
     }
+    */
 
     public static String especiales = " ,.+-x/1234567890";
 
