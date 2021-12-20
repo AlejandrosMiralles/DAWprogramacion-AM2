@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StringSplit",
+            "request": "launch",
+            "mainClass": "StringSplit",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Calculadora",
+            "request": "launch",
+            "mainClass": "Calculadora.Calculadora",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Calculadora",
             "request": "launch",
             "mainClass": "Calculadora.Calculadora",

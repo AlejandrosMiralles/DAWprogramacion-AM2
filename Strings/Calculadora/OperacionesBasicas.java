@@ -24,7 +24,7 @@ public class OperacionesBasicas {
         else if (operacion == 'x'){ resultado = multiplicacion(num1, num2);}
         else if (operacion == '/'){ resultado = division(num1, num2);}
 
-        Traductor.setAns(resultado);
+        //Traductor.setAns(resultado);
         return resultado;
     }
 }

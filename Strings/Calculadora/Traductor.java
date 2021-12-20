@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Traductor {
 
-    public static String ans;
+    //public static String ans;
 
     public static void setAns(double resultado) {
         ans = Double.toString(resultado);
@@ -214,9 +214,11 @@ public class Traductor {
         if (cadena =="" || cadena == null){ return "Operación incorrecta";}
     
         // ! = no lo supera
+       /*
         if (ans != null){
             cadena = cadena.replaceAll("ans", ans);
         }
+        */
 
         if (!validadorLetras(cadena)){
             return "Operación incorrecta";
