@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Chorrichat{
     public static Scanner user = new Scanner(System.in);
 
-    public static boolean greeting() {
+    public static boolean greets() {
         String phrase;
 
         phrase = user.nextLine();
@@ -54,7 +54,7 @@ public class Chorrichat{
 
     public static void main(String[] args) {
 
-        while (!greeting()){}
+        while (!greets()){}
         while (!sayGoodbye()){}
 
         user.close();
