@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Entrada {
+
     public static int getinteger(){
         String number, fnumber = "";
         Scanner input = new Scanner(System.in) ;

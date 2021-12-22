@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Chorrichat",
+            "request": "launch",
+            "mainClass": "Chorrichat",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
+            "name": "Launch HundirLaFlota",
+            "request": "launch",
+            "mainClass": "HundirLaFlota",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Traductor",
             "request": "launch",
             "mainClass": "Calculadora.Traductor",
