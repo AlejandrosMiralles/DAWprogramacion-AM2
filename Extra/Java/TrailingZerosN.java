@@ -4,8 +4,8 @@ public class TrailingZerosN {
     public static int zeros(int number){
         int result = 0;
 
-        for (int i = 1; i <= (int) Math.sqrt(5); i++) {
-            result += number/(int) Math.pow(5, i);
+        for (int i = 5; i <= number; i*= 5) {
+            result += number/ i;
         }
 
         return result;       
