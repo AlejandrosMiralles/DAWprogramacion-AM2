@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SumSquaredDivisors",
+            "request": "launch",
+            "mainClass": "SumSquaredDivisors",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch TrailingZerosN",
             "request": "launch",
             "mainClass": "TrailingZerosN",
