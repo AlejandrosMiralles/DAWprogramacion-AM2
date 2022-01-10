@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.Buffer;
+//import java.nio.Buffer;
 
 public class Palabras4 {
     public static String leerfichero(String ruta){
