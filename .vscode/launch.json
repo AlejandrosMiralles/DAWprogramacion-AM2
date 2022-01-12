@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestAlumno",
+            "request": "launch",
+            "mainClass": "ClaseAlumnos.TestAlumno",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
+            "name": "Launch BrainFuck",
+            "request": "launch",
+            "mainClass": "BrainFuck",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch AnalizaString",
             "request": "launch",
             "mainClass": "AnalizaString",
