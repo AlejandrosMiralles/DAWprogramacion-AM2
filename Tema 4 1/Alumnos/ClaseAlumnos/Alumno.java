@@ -34,7 +34,7 @@ public class Alumno{
 
     static void imprimirInformeAlumnos(Alumno[] inform){
         for (Alumno student : inform) {
-            System.out.print("Nombre: "+student.getName()+"\n");
+            System.out.print("Nombre: "+student.getName()+"\nID: "+student.id+"\n");
 
             if (student.getGroup() != null){
                 System.out.println("Grupo: "+student.getGroup()+"\n");
@@ -43,5 +43,4 @@ public class Alumno{
             }
         }
     }
-
 }
