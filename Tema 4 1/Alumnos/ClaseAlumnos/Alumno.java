@@ -4,17 +4,17 @@ public class Alumno{
     private int id;
     private String grupo, nombre;
 
-    private static int contador = 0; 
+    private static int totalAlumnos = 0; 
 
     Alumno(String nickname, int identifier){
-        ++contador;
+        ++totalAlumnos;
 
         nombre = nickname;
         id = identifier;
     }
 
     Alumno(String nickname, int identifier, String studentGroup){
-        ++contador;
+        ++totalAlumnos;
 
         nombre = nickname;
         id = identifier;
@@ -26,7 +26,7 @@ public class Alumno{
     }
 
     static void imprimirInforme(){
-        System.out.println(contador);
+        System.out.println(totalAlumnos);
     }
 
     private String getName(){ return nombre;}
