@@ -6,7 +6,7 @@ public class TestAlumno {
         
 
         pepe = new Alumno("Pepe", 35356);
-        maria = new Alumno("María", 354345, "1CFSJ");
+        maria = new Alumno("Maria", 354345, "1CFSJ");
         marta = new Alumno("Marta", 35156);
         julio = new Alumno("Julio", 35956);
         estefan = new Alumno("Estefan", 1290, "1CFSG");
@@ -25,6 +25,5 @@ public class TestAlumno {
 
         System.out.println("\n\nInforme de Alumnos:");
         Alumno.imprimirInformeAlumnos(students);
-        System.out.println("\n");
     }
 }
