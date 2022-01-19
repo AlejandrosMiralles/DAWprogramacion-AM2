@@ -62,7 +62,7 @@ public class SillaTest {
         chair.setPatas(patas);
         chair.setRespaldo(respaldo);
 
-        System.out.println(chair);
+        System.out.println("Hash code: "+chair.hashCode()+"\n");
         System.out.println("Color: "+chair.getColor()+
             "\nMaterial: "+ chair.getMaterial()+"\nComodidad: "+
             chair.getComodidad()+"\nPatas: "+chair.getPatas()+

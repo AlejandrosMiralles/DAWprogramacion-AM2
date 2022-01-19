@@ -28,9 +28,13 @@ public class Silla {
     byte getComodidad(){ return comodidad;}
     void setComodidad(byte comodidad){this.comodidad= comodidad;}
 
-    boolean getRespaldo(){ return respaldo;}
+    String getRespaldo(){ 
+        if (respaldo){return "Hay respaldo";}
+        return "No hay respaldo";
+    }
     void setRespaldo(boolean back){this.respaldo= back;}
 
-    Point getCoordenadas(){ return coordenadas;}
+    String getCoordenadas(){ return "("+coordenadas.getX()+", "+
+                                        coordenadas.getY()+")";}
     void setCoordenadas(int x, int y){ coordenadas.move(x, y);}
 }
