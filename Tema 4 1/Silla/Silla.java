@@ -14,18 +14,23 @@ public class Silla {
     private String color, material;
     private byte patas, comodidad;
     private boolean respaldo;
-    private Point coordenadas;
+    private Point coordenadas = new Point();
 
     String getColor(){ return color;}
+    void setColor(String color){this.color= color;}
 
     String getMaterial(){ return material;}
+    void setMaterial(String material){this.material= material;}
 
     byte getPatas(){ return patas;}
+    void setPatas(byte foots){this.patas= foots;}
     
     byte getComodidad(){ return comodidad;}
+    void setComodidad(byte comodidad){this.comodidad= comodidad;}
 
     boolean getRespaldo(){ return respaldo;}
+    void setRespaldo(boolean back){this.respaldo= back;}
 
-
-
+    Point getCoordenadas(){ return coordenadas;}
+    void setCoordenadas(int x, int y){ coordenadas.move(x, y);}
 }
