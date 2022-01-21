@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TicketMachine",
+            "request": "launch",
+            "mainClass": "NaiveTicketMachine.TicketMachine",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch SillaTest",
             "request": "launch",
             "mainClass": "Silla.SillaTest",
