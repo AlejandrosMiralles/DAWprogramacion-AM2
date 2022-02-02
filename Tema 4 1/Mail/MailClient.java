@@ -1,6 +1,5 @@
 package Mail;
 
-
 /**
  * A class to model a simple email client. The client is run by a
  * particular user, and sends and retrieves mail via a particular server.
@@ -54,9 +53,15 @@ public class MailClient
      * @param message The text of the message to be sent.
      * @param subject Message's topic.
      */
-    public void sendMailItem(String to, String message, String subject)
-    {
+    public void sendMailItem(String to, String message, String subject){
         MailItem item = new MailItem(user, to, message, subject);
         server.post(item);
+    }
+
+    void forwardLastMailItem(String forwardTo){
+        MailItem message = server.getNextMailItem(user);
+        MailItem resend = new MailItem(user, forwardTo, message.getMessage(), message.getSubject());
+
+        server.post(resend);
     }
 }

@@ -57,6 +57,11 @@ public class MailItem
         return message;
     }
 
+    /** 
+    * @return The message's topic
+    */
+    public String getSubject(){ return subject;}
+
     /**
      * Print this mail message to the text terminal.
      */
