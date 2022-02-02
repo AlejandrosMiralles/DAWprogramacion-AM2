@@ -2,7 +2,7 @@ package Mail;
 
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.Iterator;
+import java.util.Iterator;
 
 /**
  * A simple model of a mail server. The server is able to receive
@@ -47,24 +47,19 @@ public class MailServer
      * @param who The user requesting their next item.
      * @return The user's next item.
      */
-    public MailItem getNextMailItem(String who)  //revisar
-    {
-        /*
+    public MailItem getNextMailItem(String who){
+        
         Iterator<MailItem> it = items.iterator();
         while(it.hasNext()) {
             MailItem item = it.next();
-            if(item.getTo().equals(who)) {
+            if(item.getFrom().equals(who)) {
                 it.remove();
                 return item;
             }
         }
         
         return null;
-        */
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getFrom().equals(who)){ items.remove(i); return items.get(i);}
-        }
-        return null;
+        
     }
 
     /**
