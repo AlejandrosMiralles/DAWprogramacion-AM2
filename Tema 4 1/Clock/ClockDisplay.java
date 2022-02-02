@@ -1,3 +1,5 @@
+package Clock;
+
 /**
  * The ClockDisplay class implements a digital clock display for an
  * European-style 24 hour clock. The clock shows hours and minutes. The 

@@ -1,3 +1,5 @@
+package Clock;
+
 /**
  * The NumberDisplay class represents a digital number display that can hold
  * values from zero to a given limit. The limit can be specified when creating
