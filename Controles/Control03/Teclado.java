@@ -18,14 +18,15 @@ public class Teclado {
     //Contador que cuenta la cantidad de teclados creados
     private static int contador = 0;
 
+    /** @return El color del teclado */
     public String getColor() { return color; }
-   
+   /** @return La cantidad de teclas que tiene el teclado */
     public int getNTeclas() { return NTeclas;}
-   
+   /** @return Si el teclada utiliza una conexión inalambrica o no */
     public boolean isConectividad() { return conectividadInalambrica;}
-
+    /** @return El idioma en que está basado el teclado */
     public String getIdioma() {return idioma;}
- 
+    /** @return El formato del teclado */
     public String getFormato() {return formato;}
 
     /** Constructor del teclado
@@ -45,6 +46,14 @@ public class Teclado {
         ++contador;
     }
 
+
+    /** Un constrcutor default de teclado. Por defecto tiene estosa valores:
+     * Color: Negro
+     * NTeclas: 100
+     * ConectivdadInalambrica: falser
+     * idioma: es
+     * formato: extendido
+     */
     public Teclado() {
         this.color = "Negro";
         NTeclas = 100;
@@ -55,6 +64,12 @@ public class Teclado {
         ++contador;
     }
 
+    /** Comprueba si el número de teclas es válido.
+     * 
+     * @param nTeclas Ha de ser superior a 0
+     * @return Devovlerá el mismo número si es superior a 0
+     * @exception ArithmeticalExcepction Se dividrá entre 0 si nTeclas es inferior a 1
+     */
     int checkTeclas(int nTeclas){ 
         if (nTeclas > 0){
             return nTeclas;
@@ -62,18 +77,30 @@ public class Teclado {
         return 30/0;
     }
 
+    /** Comprueba si el idioma está formado por 2 caracteres
+     * 
+     * @param idioma Ha de ser un String formado por 2 caracteres
+     * @return Devovlerá el mismo String
+     * @exception ArithmeticalExcepction Se dividrá entre 0 si idiomas no está formado por 2 carácteres
+     */
     String checkIdioma(String idioma){
         if (idioma.length() == 2){ return idioma;}
         return "" + 30/0;
     }
  
+    /** Comprueba si el formato es válido.
+     * 
+     * @param Formato Ha de ser o "compacto" o "extendido"
+     * @return Devovlerá el mismo formato, pero en minúscula
+     * @exception ArithmeticalExcepction Se dividrá entre 0 si el formato no es ninguno de los dos válidos
+     */
     String checkFormato(String formato){
         formato = formato.toLowerCase();
 
         if (formato.equals("compacto") || formato.equals("extendido")){ return formato;}
         return "" + 30/0;
     }
-    //MEJORAR
 
+    /** @return Devuelve el número de Teclados creados */
     public static int getNTeclados(){ return contador;}
 }

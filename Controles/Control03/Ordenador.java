@@ -17,10 +17,13 @@ public class Ordenador {
     //Los ordenadores se pueden conectar a otros ordenadores. Con este campo se guardan los ordenadores conectados
     private List<Ordenador> ordenadoresConectados;
 
-    
+    /** @return El valor del formato */
     public String getFormato() {return formato;}
+    /** @return El valor del color */
     public String getColor() {return color;}
+    /** @return El objeto teclado que está usando el ordenador */
     public Teclado getTeclado() {return teclado;}
+    /** @return Devuelve un String con el hascode(único) de los ordenador conectados a ese ordenador */
     public String getConectados(){
         String result = "";
         for (Ordenador ordenador : ordenadoresConectados) {
@@ -29,6 +32,7 @@ public class Ordenador {
         return result;
     }
     
+    /** Cambia el teclado del ordenador */
     public void setTeclado(Teclado teclado) { this.teclado = teclado;}
   
     /** Constructor del ordenador
