@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tester",
+            "request": "launch",
+            "mainClass": "Control03.Tester",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch MailTest",
             "request": "launch",
             "mainClass": "Mail.MailTest",
