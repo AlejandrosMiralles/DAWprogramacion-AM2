@@ -56,7 +56,7 @@ public class MusicOrganizer
      * @return Whether the index is valid (true) or not (false)
      */
     public boolean isValidIndex(int index){
-        if (index>=0 && getNumberOfFiles()<index){
+        if (index>=0 && getNumberOfFiles()>index){
             return true ;
         }
         return false;
