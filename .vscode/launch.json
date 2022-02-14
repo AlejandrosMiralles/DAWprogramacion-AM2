@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MusicTester",
+            "request": "launch",
+            "mainClass": "MusicOrganizer.MusicTester",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch ArrayRepaso",
             "request": "launch",
             "mainClass": "ArrayRepaso.ArrayRepaso",
