@@ -40,6 +40,8 @@ public class TrackReader
         File[] audioFiles = audioFolder.listFiles((dir, name) -> 
                     name.toLowerCase().endsWith(suffix));
         
+        if (audioFiles == null){ return new ArrayList<Track>();}
+
         // Put all the matching files into the organizer.
         ArrayList<Track> tracks = 
             Arrays.stream(audioFiles).
