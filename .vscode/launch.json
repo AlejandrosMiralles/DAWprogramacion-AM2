@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MusicTester",
+            "request": "launch",
+            "mainClass": "MusicOrganizer.MusicTester",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayRepaso",
+            "request": "launch",
+            "mainClass": "ArrayRepaso.ArrayRepaso",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
+            "name": "Launch java",
+            "request": "launch",
+            "mainClass": "MusicTester.java",
+            "projectName": "DAWprogramacion-AM2_e31a6ba5"
+        },
+        {
+            "type": "java",
             "name": "Launch Tester",
             "request": "launch",
             "mainClass": "Control03.Tester",
