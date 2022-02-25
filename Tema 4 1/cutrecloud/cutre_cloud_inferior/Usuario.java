@@ -1,31 +1,30 @@
-package cutrecloud;
+package cutrecloud.cutre_cloud_inferior;
+
+import cutrecloud.cutre_cloud_superior.Connector;
 
 public class Usuario {
-    private int id;
+    private int id = 0;
     private String email;
     private String password;
+    private static int idGenerator = 1;
     
     public int getID(){ return id;}
     public String getEmail(){ return email;}
     public String getPassword() { return password;}
     
-    public void setId(int id) {
-        if (BaseDatos.idUsuarioValido(id)){ return;}
-        this.id = id;
-    }
     public void setEmail(String email) {
-        if (BaseDatos.emailUsuarioValido(email)){ return;}
+        if (Connector.emailUsuarioValido(email)){ return;}
         this.email = email;
     }
     public void setPassword(String password) { this.password = password;}
 
-    public Usuario(int id, String email, String password) {
+    public Usuario(String email, String password) {
 
-        BaseDatos.addUser(this);
+        Connector.addUser(this);
         
-        if (! BaseDatos.eseUsuarioEsValido(id, email)){ return;}
+        if (! Connector.eseUsuarioEsValido(email)){ return;}
 
-        this.id = id;
+        id = idGenerator++;
         this.email = email;
         this.password = password;
 
