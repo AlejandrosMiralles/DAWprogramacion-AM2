@@ -4,11 +4,12 @@ import cutrecloud.cutre_cloud_superior.Connector;
 
 public class Media implements ParserXML {
 
-    private int id;
+    private int id = 0;
     private String nombre;
     private String contenido;
     private TiposMedia tipo;
     private int usuario_id;
+    private static int idGenerator = 0;
 
     public int getId() {return id;}
     public String getNombre() {return nombre;}
@@ -16,31 +17,27 @@ public class Media implements ParserXML {
     public TiposMedia getTipo(){ return tipo;}
     public int getUsuario_id() {return usuario_id;}
 
-    public void setId(int id) {
-        if (! Connector.idMediaValido(id)){ return;}
-        this.id = id;
-    }
-    public void setNombre(String nombre) {
+    public void setNombre(final String nombre) {
         this.nombre = nombre;
     }
-    public void setContenido(String contenido) {
+    public void setContenido(final String contenido) {
         this.contenido = contenido;
     }
-    public void setTipo(TiposMedia tipo) {
+    public void setTipo(final TiposMedia tipo) {
         this.tipo = tipo;
     }
-    public void setUsuario_id(Usuario user) {
+    public void setUsuario_id(final Usuario user) {
         user.getID();
     }
 
     
-    public Media(int id, String nombre, String contenido, TiposMedia tipo, Usuario user) {
+    public Media(String nombre,String contenido,TiposMedia tipo, Usuario user) {
 
         Connector.addMedia(this);
         
-        if (! Connector.esaMediaEsValida(user.getID())){ return;}
+        if (! Connector.esaMediaEsValida(user.getID())){ return ;}
         
-        this.id = id;
+        this.id = ++idGenerator;
         this.nombre = nombre;
         this.contenido = contenido;
         this.tipo = tipo;

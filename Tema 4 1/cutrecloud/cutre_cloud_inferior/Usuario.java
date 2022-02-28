@@ -24,7 +24,7 @@ public class Usuario implements ParserXML {
         
         if (! Connector.eseUsuarioEsValido(email)){ return;}
 
-        id = idGenerator++;
+        id = ++idGenerator;
         this.email = email;
         this.password = password;
 
