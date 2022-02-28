@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import cutrecloud.cutre_cloud_inferior.*;
 
-public class Administrador {
+public class Administrador{
 
     ArrayList[] listas = { BaseDatos.listaMedia, BaseDatos.listaUsuarios};
     

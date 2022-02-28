@@ -2,7 +2,7 @@ package cutrecloud.cutre_cloud_inferior;
 
 import cutrecloud.cutre_cloud_superior.Connector;
 
-public class Usuario {
+public class Usuario implements ParserXML {
     private int id = 0;
     private String email;
     private String password;
@@ -30,5 +30,15 @@ public class Usuario {
 
     }
 
-    
+    public String generateXML(){
+        String result = "";
+
+        result+= "<Usuario>";
+        result+= "\n\t<id valor='"+ id + "' />";
+        result+= "\n\t<email> "+ email + " </email>";
+        result+= "\n\t<password> "+ password + "</password>";
+        result+= "\n</Usuario>";
+
+        return result;
+    }
 }

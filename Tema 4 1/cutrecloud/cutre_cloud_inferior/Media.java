@@ -2,7 +2,7 @@ package cutrecloud.cutre_cloud_inferior;
 
 import cutrecloud.cutre_cloud_superior.Connector;
 
-public class Media {
+public class Media implements ParserXML {
 
     private int id;
     private String nombre;
@@ -47,5 +47,18 @@ public class Media {
         this.usuario_id = user.getID();
 
     }
-    
+   
+    public String generateXML(){
+        String result = "";
+
+        result+= "<Media>";
+        result+= "\n\t<id valor'"+ id + "' />";
+        result+= "\n\t<nombre> "+ nombre + " </nombre>";
+        result+= "\n\t<contenido> "+ contenido + " </contenido>";
+        result+= "\n\t<tipo tipo='"+ tipo + "' />";
+        result+= "\n\t<Usuario_id valor='"+ usuario_id + "'/>";
+        result+= "\n</Media>";
+
+        return result;
+    }
 }
