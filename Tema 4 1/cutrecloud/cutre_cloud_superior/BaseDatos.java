@@ -51,38 +51,78 @@ class BaseDatos {
     }
 
     static void eliminarTodosLosArchivos(TiposMedia tipo){
-        for (Media archivo : listaMedia) {
+        boolean seHaEliminado = false;
+        Media archivo;
+        for (int i = 0; i < listaMedia.size(); i++) {
+            if (seHaEliminado){ 
+                --i;
+                seHaEliminado = false;
+            }
+
+            archivo = listaMedia.get(i);
             if (archivo.getTipo().equals(tipo)){
                 listaMedia.remove(archivo);
+                seHaEliminado = true;
             }
         }
     }
    
     static void eliminarUsuariosPorEmail(String email){
-        for (Usuario user : listaUsuarios) {
+        boolean seHaEliminado = false;
+        Usuario user;
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (seHaEliminado){
+                --i;
+                seHaEliminado = false;
+            }
+
+            user = listaUsuarios.get(i);
+
             if (user.getEmail().equals(email)){
                 listaUsuarios.remove(user);
                 eliminarSusArchivos(user);
+                seHaEliminado = true;
             }
+
         }
     }
 
     static void eliminarSusArchivos(Usuario user){
-        for (Media archivo : listaMedia) {
-            if(archivo.getUsuario_id() == user.getID()){
+        boolean seHaEliminado = false;
+        Media archivo;
+        for (int i = 0; i < listaMedia.size(); i++) {
+            if (seHaEliminado){ 
+                --i;
+                seHaEliminado = false;
+            }
+
+            archivo = listaMedia.get(i);
+            if (archivo.getUsuario_id() == user.getID()){
                 listaMedia.remove(archivo);
+                seHaEliminado = true;
             }
         }
     }
 
     static void eliminarUsuariosPorDominio(String dominio){
-        if (! dominio.startsWith("\\@")){ return;}
+        if (! dominio.startsWith("@")){ return;}
 
-        for (Usuario user : listaUsuarios) {
+        boolean seHaEliminado = false;
+        Usuario user;
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (seHaEliminado){
+                --i;
+                seHaEliminado = false;
+            }
+
+            user = listaUsuarios.get(i);
+
             if (user.getEmail().endsWith(dominio)){
                 listaUsuarios.remove(user);
                 eliminarSusArchivos(user);
+                seHaEliminado = true;
             }
+
         }
     }
 }
