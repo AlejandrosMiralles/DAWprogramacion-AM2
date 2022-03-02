@@ -51,39 +51,32 @@ class BaseDatos {
     }
 
     static void eliminarTodosLosArchivos(TiposMedia tipo){
+        
         boolean seHaEliminado = false;
         Media archivo;
-        for (int i = 0; i < listaMedia.size(); i++) {
-            if (seHaEliminado){ 
-                --i;
-                seHaEliminado = false;
-            }
 
+        for (int i = 0; i < listaMedia.size(); i++) {
             archivo = listaMedia.get(i);
             if (archivo.getTipo().equals(tipo)){
                 listaMedia.remove(archivo);
                 seHaEliminado = true;
             }
+
+            if (seHaEliminado){ 
+                --i;
+                seHaEliminado = false;
+            }
         }
     }
    
     static void eliminarUsuariosPorEmail(String email){
-        boolean seHaEliminado = false;
-        Usuario user;
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-            if (seHaEliminado){
-                --i;
-                seHaEliminado = false;
-            }
-
-            user = listaUsuarios.get(i);
-
+        //El email de cada usuario es único
+        for (Usuario user : listaUsuarios) {
             if (user.getEmail().equals(email)){
                 listaUsuarios.remove(user);
                 eliminarSusArchivos(user);
-                seHaEliminado = true;
+                return ;
             }
-
         }
     }
 
@@ -91,15 +84,15 @@ class BaseDatos {
         boolean seHaEliminado = false;
         Media archivo;
         for (int i = 0; i < listaMedia.size(); i++) {
-            if (seHaEliminado){ 
-                --i;
-                seHaEliminado = false;
-            }
-
             archivo = listaMedia.get(i);
             if (archivo.getUsuario_id() == user.getID()){
                 listaMedia.remove(archivo);
                 seHaEliminado = true;
+            }
+
+            if (seHaEliminado){ 
+                --i;
+                seHaEliminado = false;
             }
         }
     }
@@ -110,17 +103,17 @@ class BaseDatos {
         boolean seHaEliminado = false;
         Usuario user;
         for (int i = 0; i < listaUsuarios.size(); i++) {
-            if (seHaEliminado){
-                --i;
-                seHaEliminado = false;
-            }
-
             user = listaUsuarios.get(i);
 
             if (user.getEmail().endsWith(dominio)){
                 listaUsuarios.remove(user);
                 eliminarSusArchivos(user);
                 seHaEliminado = true;
+            }
+
+            if (seHaEliminado){
+                --i;
+                seHaEliminado = false;
             }
 
         }
