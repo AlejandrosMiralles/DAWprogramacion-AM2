@@ -52,19 +52,13 @@ class BaseDatos {
 
     static void eliminarTodosLosArchivos(TiposMedia tipo){
         
-        boolean seHaEliminado = false;
         Media archivo;
 
         for (int i = 0; i < listaMedia.size(); i++) {
             archivo = listaMedia.get(i);
             if (archivo.getTipo().equals(tipo)){
                 listaMedia.remove(archivo);
-                seHaEliminado = true;
-            }
-
-            if (seHaEliminado){ 
                 --i;
-                seHaEliminado = false;
             }
         }
     }
@@ -81,18 +75,14 @@ class BaseDatos {
     }
 
     static void eliminarSusArchivos(Usuario user){
-        boolean seHaEliminado = false;
+        
         Media archivo;
+        
         for (int i = 0; i < listaMedia.size(); i++) {
             archivo = listaMedia.get(i);
             if (archivo.getUsuario_id() == user.getID()){
                 listaMedia.remove(archivo);
-                seHaEliminado = true;
-            }
-
-            if (seHaEliminado){ 
                 --i;
-                seHaEliminado = false;
             }
         }
     }
