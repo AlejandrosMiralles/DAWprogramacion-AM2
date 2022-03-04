@@ -1,6 +1,9 @@
 package cutrecloud.cutre_cloud_inferior;
 
 import cutrecloud.cutre_cloud_superior.Connector;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
 
 public class Usuario implements ParserXML {
     private int id = 0;
@@ -45,5 +48,19 @@ public class Usuario implements ParserXML {
     public void writeXML(){
         String ficheroNombre = toString().split("\\@")[0]+id+".txt";
         String contenidoFichero = generateXML();
+        File archivo;
+        FileWriter cervantes;
+
+        try {
+            archivo = new File(ficheroNombre);
+            archivo.createNewFile();
+            cervantes = new FileWriter(archivo, false);
+            cervantes.write(contenidoFichero);
+            cervantes.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+        }
+
     }
 }

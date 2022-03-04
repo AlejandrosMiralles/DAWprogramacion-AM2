@@ -6,18 +6,9 @@ public class Tester {
     public static void main(String[] args) {
         Administrador admin = new Administrador();
         
-
-        new Media("Archivo", null, TiposMedia.AUDIO, new Usuario("JulioJesus@gmail.com", null));
-        new Media("Archivo", null, TiposMedia.AUDIO, new Usuario("JulioRockero@ieselcaminas.org", null));
-        new Media("Archivo", null, TiposMedia.AUDIO, new Usuario("JulioXesus@ieselcaminas.org", null));
-        new Media("Fichero", null, TiposMedia.VIDEO, new Usuario("JulioJavaLover@gmail.com", null));
-        new Media("Fichero", null, TiposMedia.VIDEO, new Usuario("JulioCPlusPlus@ieselcaminas.org", null));
-
-        admin.eliminarUsuariosPorDominio("ieselcaminas.org");
-        admin.eliminarUsuariosPorDominio("@ieselcaminas.o");
-        admin.eliminarUsuariosPorDominio("@ieselcaminas.org");
-
-        System.out.println("Testeo terminado");
-
+        new Usuario("dee", "sdcms").writeXML();
+        //Usuario tester = new Usuario("dmeor e ", "dmemr e");
+    //    new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233")).writeXML();
+        //Media testerMedia = new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233"));    
     }
 }

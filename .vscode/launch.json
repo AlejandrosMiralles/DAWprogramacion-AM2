@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tester",
+            "request": "launch",
+            "mainClass": "cutrecloud.Tester",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch StripComments",
             "request": "launch",
             "mainClass": "StripComments",

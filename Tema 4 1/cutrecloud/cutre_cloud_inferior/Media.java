@@ -1,6 +1,9 @@
 package cutrecloud.cutre_cloud_inferior;
 
 import cutrecloud.cutre_cloud_superior.Connector;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileOutputStream;
 
 public class Media implements ParserXML {
 
@@ -49,7 +52,7 @@ public class Media implements ParserXML {
         String result = "";
 
         result+= "<Media>";
-        result+= "\n\t<id valor'"+ id + "' />";
+        result+= "\n\t<id valor='"+ id + "' />";
         result+= "\n\t<nombre> "+ nombre + " </nombre>";
         result+= "\n\t<contenido> "+ contenido + " </contenido>";
         result+= "\n\t<tipo tipo='"+ tipo + "' />";
@@ -60,6 +63,19 @@ public class Media implements ParserXML {
     }
 
     public void writeXML() {
+        String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String contenidoFichero = generateXML();
+        File archivo;
+        FileOutputStream cervantes;
         
+        try {
+            archivo = new File(ficheroNombre);
+            archivo.createNewFile();
+            cervantes = new FileOutputStream(archivo);
+            cervantes.write(contenidoFichero.getBytes());
+            cervantes.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
