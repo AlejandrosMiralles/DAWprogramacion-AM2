@@ -58,4 +58,8 @@ public class Media implements ParserXML {
 
         return result;
     }
+
+    public void writeXML() {
+        
+    }
 }

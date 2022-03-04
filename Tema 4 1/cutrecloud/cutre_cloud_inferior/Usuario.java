@@ -41,4 +41,9 @@ public class Usuario implements ParserXML {
 
         return result;
     }
+
+    public void writeXML(){
+        String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String contenidoFichero = generateXML();
+    }
 }
