@@ -1,0 +1,5 @@
+<Usuario>
+	<id valor='2' />
+	<email> sdc </email>
+	<password> wsfv</password>
+</Usuario>

@@ -8,7 +8,7 @@ public class Tester {
         
         new Usuario("dee", "sdcms").writeXML();
         //Usuario tester = new Usuario("dmeor e ", "dmemr e");
-    //    new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233")).writeXML();
+        new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233")).writeXML();
         //Media testerMedia = new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233"));    
     }
 }

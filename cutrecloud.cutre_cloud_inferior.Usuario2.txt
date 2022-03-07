@@ -1,5 +1,0 @@
-<Usuario>
-	<id valor='2' />
-	<email> dee </email>
-	<password> sdcms</password>
-</Usuario>

@@ -47,12 +47,13 @@ public class Usuario implements ParserXML {
 
     public void writeXML(){
         String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String path = "Tema 4 1/cutrecloud/cutre_cloud_inferior/ficherosxml/usuariosxml/";
         String contenidoFichero = generateXML();
         File archivo;
         FileWriter cervantes;
 
         try {
-            archivo = new File(ficheroNombre);
+            archivo = new File(path+ficheroNombre);
             archivo.createNewFile();
             cervantes = new FileWriter(archivo, false);
             cervantes.write(contenidoFichero);

@@ -64,12 +64,13 @@ public class Media implements ParserXML {
 
     public void writeXML() {
         String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String path = "Tema 4 1/cutrecloud/cutre_cloud_inferior/ficherosxml/mediasxml/";
         String contenidoFichero = generateXML();
         File archivo;
         FileOutputStream cervantes;
         
         try {
-            archivo = new File(ficheroNombre);
+            archivo = new File(path+ficheroNombre);
             archivo.createNewFile();
             cervantes = new FileOutputStream(archivo);
             cervantes.write(contenidoFichero.getBytes());

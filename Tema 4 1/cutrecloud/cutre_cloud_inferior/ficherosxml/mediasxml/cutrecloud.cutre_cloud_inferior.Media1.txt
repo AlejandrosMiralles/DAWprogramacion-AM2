@@ -1,0 +1,7 @@
+<Media>
+	<id valor='1' />
+	<nombre> Pepe </nombre>
+	<contenido> wc </contenido>
+	<tipo tipo='IMAGEN' />
+	<Usuario_id valor='3'/>
+</Media>
