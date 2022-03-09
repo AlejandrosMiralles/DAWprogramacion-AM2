@@ -41,5 +41,7 @@ public class UsuarioInput{
         do {
             stop = menu(lector);
         } while (! stop);
+
+        lector.close();
     }
 }

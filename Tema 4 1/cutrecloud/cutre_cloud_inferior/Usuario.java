@@ -27,7 +27,7 @@ public class Usuario implements ParserXML {
         
         if (! Connector.eseUsuarioEsValido(email)){ return;}
 
-        id = ++idGenerator;
+        id = idGenerator++;
         this.email = email;
         this.password = password;
 
@@ -46,7 +46,7 @@ public class Usuario implements ParserXML {
     }
 
     public void writeXML(){
-        String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String ficheroNombre = getClass().getSimpleName()+id+".xml";
         String path = "Tema 4 1/cutrecloud/cutre_cloud_inferior/ficherosxml/usuariosxml/";
         String contenidoFichero = generateXML();
         File archivo;

@@ -6,7 +6,7 @@ import cutrecloud.cutre_cloud_inferior.*;
 
 public class Administrador{
 
-    ArrayList[] listas = { BaseDatos.listaMedia, BaseDatos.listaUsuarios};
+    public ArrayList[] listas = { BaseDatos.listaMedia, BaseDatos.listaUsuarios};
     
     public void eliminarArchivo(String nombre){
         BaseDatos.eliminarArchivo(nombre);

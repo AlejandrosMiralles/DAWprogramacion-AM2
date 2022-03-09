@@ -1,5 +1,0 @@
-<Usuario>
-	<id valor='3' />
-	<email> ewfv </email>
-	<password> ew</password>
-</Usuario>

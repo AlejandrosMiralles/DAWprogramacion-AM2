@@ -63,7 +63,7 @@ public class Media implements ParserXML {
     }
 
     public void writeXML() {
-        String ficheroNombre = toString().split("\\@")[0]+id+".txt";
+        String ficheroNombre = getClass().getSimpleName()+id+".xml";
         String path = "Tema 4 1/cutrecloud/cutre_cloud_inferior/ficherosxml/mediasxml/";
         String contenidoFichero = generateXML();
         File archivo;
