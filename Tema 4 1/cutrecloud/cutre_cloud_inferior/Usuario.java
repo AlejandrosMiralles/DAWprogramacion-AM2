@@ -1,9 +1,17 @@
 package cutrecloud.cutre_cloud_inferior;
 
 import cutrecloud.cutre_cloud_superior.Connector;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class Usuario implements ParserXML {
     private int id = 0;
@@ -60,8 +68,43 @@ public class Usuario implements ParserXML {
             cervantes.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
         }
 
     }
+
+    public static void loadXML(){
+        File folder = new File("./usuarios");
+
+        
+        for (File xmlFile : folder.listFiles()) {
+            getLoadSingleXML(xmlFile);
+        }
+   }
+
+   private static Usuario getLoadSingleXML(File xmlFile) {
+
+       DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+       DocumentBuilder dBuilder;
+       Document doc;
+       Usuario newUser = null;
+
+       try {
+           dBuilder = dbFactory.newDocumentBuilder();
+           doc = dBuilder.parse(xmlFile);
+           String email = doc.getElementsByTagName("email").item(0).getTextContent();
+           String password = doc.getElementsByTagName("password").item(0).getTextContent();
+           newUser = new Usuario(email, password);
+       } catch (ParserConfigurationException e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+       } catch (SAXException e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+       } catch (IOException e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+       }
+       
+       return newUser;
+   }
 }

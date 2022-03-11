@@ -15,6 +15,7 @@ public class Tester {
         new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233")).writeXML();
         //Media testerMedia = new Media("Pepe", "wc", TiposMedia.IMAGEN, new Usuario("email", "22233"));    
     
+        /*
         String nombreArchivo= "Usuario1.xml";
         String path = "Tema 4 1/cutrecloud/cutre_cloud_inferior/ficherosxml/usuariosxml/";
         try {
@@ -29,7 +30,7 @@ public class Tester {
         catch (FileNotFoundException e) {
             System.out.println(e.toString());
         }
-    
+        */
     
     
     }
