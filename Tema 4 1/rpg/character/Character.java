@@ -2,12 +2,10 @@ package rpg.character;
 
 import rpg.character.stat.*;
 
-import javax.swing.text.html.HTMLDocument.RunElement;
-
 import rpg.character.job.*;
 import rpg.character.race.*;
 
-public class Character {
+public class Character implements IDamageble {
     private String name;
     private Job job;
     private Race race;
@@ -67,5 +65,29 @@ public class Character {
                  " Magic: " + magic() +
                  " Health: "+ health();
         return name + job + race + stats;
+    }
+
+    @Override
+    public double maxhealth() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean isDead() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public void receiversDamage(int amount) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void heals(int amount) {
+        // TODO Auto-generated method stub
+        
     }
 }
