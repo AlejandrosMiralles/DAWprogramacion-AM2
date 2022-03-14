@@ -1,7 +1,7 @@
 package rpg.character;
 
 import rpg.character.stat.*;
-
+import rpg.item.Food.IConsumable;
 import rpg.character.job.*;
 import rpg.character.race.*;
 
@@ -15,13 +15,18 @@ public class Character implements IDamageble {
     private Constitution constitir;
     private Dexterity dexter;
 
-    public Character(String name, Job job, Race race, Strength migth, Intelligence clever, Dexterity dexter) {
+    private double health;
+
+    public Character(final String name, final Job job, final Race race, final Strength migth, final Intelligence clever, final Dexterity dexter) {
         this.name = name;
         this.job = job;
         this.race = race;
         this.migth = migth;
         this.clever = clever;
         this.dexter = dexter;
+
+        health = 2 * (constitir.getValue() + race.modifier(constitir) +
+        job.modifier(constitir));
     }
 
     public String getName() { return name;}
@@ -46,8 +51,7 @@ public class Character implements IDamageble {
     }
 
     public double health(){
-        return 2 * (constitir.getValue() + race.modifier(constitir) +
-                    job.modifier(constitir));
+        return health;
     }
     
     @Override
@@ -69,25 +73,42 @@ public class Character implements IDamageble {
 
     @Override
     public double maxhealth() {
-        // TODO Auto-generated method stub
-        return 0;
+        return  2 * (constitir.getValue() + race.modifier(constitir) +
+        job.modifier(constitir));
     }
 
     @Override
     public boolean isDead() {
-        // TODO Auto-generated method stub
+        if (health <= 0){
+            return true;
+        }
+
         return false;
     }
 
     @Override
-    public void receiversDamage(int amount) {
-        // TODO Auto-generated method stub
-        
+    public void receiversDamage(final int amount) {
+        health-= amount;
+
+        if (isDead()){ health = 0;}
+
+        System.out.print(name+" received "+amount+" damage.");
+        System.out.println("\tHealth: "+health+"/"+maxhealth());
     }
 
     @Override
-    public void heals(int amount) {
-        // TODO Auto-generated method stub
-        
+    public void heals(final int amount) {
+        health+= amount;
+
+        if (health> maxhealth()){ health = maxhealth();}
+
+        System.out.print(name+" healed "+amount+" life.");
+        System.out.println("\tHealth: "+health+"/"+maxhealth());
+    }
+
+    public void consume(IConsumable consumable){
+        consumable.consumedBy(this);
+
+        System.out.println(name + " consumed: "+ consumable.getClass().getSimpleName());
     }
 }
