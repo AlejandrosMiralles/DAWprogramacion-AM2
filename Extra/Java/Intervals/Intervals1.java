@@ -6,13 +6,19 @@ package Intervals;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
 public class Intervals1 {
 
     public static int sumIntervals(int[][] intervals) {
-        int[][] finalIntervals = removeOverlapping(intervals);
+        int[][] finalIntervals;
+
+        if (intervals != null){
+            finalIntervals = removeOverlapping(intervals);
+        }else{
+            finalIntervals = new int[0][2];
+        }
 
         int finalLength = 0;
+
         for (int[] interval : finalIntervals) {
             finalLength+= (interval[1] - interval[0]);
         }
@@ -24,6 +30,8 @@ public class Intervals1 {
         ArrayList<Integer[]> resultList = new ArrayList<>();
 
         for (int[] interval : intervals) {
+            if (interval == null || interval[0] == interval[1]){ continue;}
+
             addInterval(resultList, interval);
         }
 
@@ -45,12 +53,12 @@ public class Intervals1 {
             if (EstaDentroDe(intervalToAdd, intervalMember)){ 
                 return;
             }else if (EstaDentroDe(intervalMember, intervalToAdd)){
-                list.remove(intervalMember);
+                iteranator.remove();
             }else if (intervalToAdd[0] <= intervalMember[0] && intervalToAdd[1] > intervalMember[0]){ 
-                list.remove(intervalMember);
+                iteranator.remove();
                 intervalToAdd = new Integer[]{intervalToAdd[0], intervalMember[1]};
             }else if (intervalToAdd[0] < intervalMember[1] && intervalToAdd[1] >= intervalMember[1]){
-                list.remove(intervalMember);
+                iteranator.remove();
                 intervalToAdd = new Integer[]{ intervalMember[0], intervalToAdd[1]};
             }
         }
@@ -62,4 +70,10 @@ public class Intervals1 {
         return interval2[0] <= interval1[0] && interval2[1] >= interval1[1];
     }
 
+    public static void main(String[] args) {
+        System.out.println(Intervals1.sumIntervals(new int[][]{
+                        {1,4},{3,6},{2,8}
+        }));
+
+    }
 }

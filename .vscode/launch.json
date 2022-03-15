@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Intervals1",
+            "request": "launch",
+            "mainClass": "Intervals.Intervals1",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch UsuarioInput",
             "request": "launch",
             "mainClass": "cutrecloud.cutre_cloud_inferior.UsuarioInput",
