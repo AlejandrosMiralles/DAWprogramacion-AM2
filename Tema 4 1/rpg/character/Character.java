@@ -17,13 +17,14 @@ public class Character implements IDamageble {
 
     private double health;
 
-    public Character(final String name, final Job job, final Race race, final Strength migth, final Intelligence clever, final Dexterity dexter) {
+    public Character(String name, Job job, Race race, Strength migth, Intelligence clever, Dexterity dexter) {
         this.name = name;
         this.job = job;
         this.race = race;
         this.migth = migth;
         this.clever = clever;
         this.dexter = dexter;
+        this.constitir = new Constitution(100);
 
         health = 2 * (constitir.getValue() + race.modifier(constitir) +
         job.modifier(constitir));

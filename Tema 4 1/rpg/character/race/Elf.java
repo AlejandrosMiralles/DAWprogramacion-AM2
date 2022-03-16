@@ -4,7 +4,7 @@ import rpg.character.stat.*;
 
 public class Elf extends Race {
 
-    Elf(){ super();}
+    public Elf(){ super();}
 
     @Override
     public int modifier(Stat stat) {

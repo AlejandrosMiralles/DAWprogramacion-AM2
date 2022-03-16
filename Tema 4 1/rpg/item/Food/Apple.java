@@ -2,5 +2,5 @@ package rpg.item.Food;
 
 public class Apple extends Food {
 
-    Apple(){ super.powerFood = 5;}    
+    Apple(){ super.setPowerFood(5);}    
 }
