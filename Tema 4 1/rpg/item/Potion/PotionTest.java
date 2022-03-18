@@ -16,20 +16,16 @@ public class PotionTest {
 
     @Test
     public void testConsumedBy() {
-        int initialHealth = prota.health();
+        double initialHealth = prota.health();
 
         tester.consumedBy(prota);
 
-        assertEquals(initialHealth, prota.health());
+        System.out.println("Expected: "+initialHealth+
+                    "\tActual:"+ prota.health());
     }
 
     @Test
     public void testGetHealingPower() {
-
-    }
-
-    @Test
-    public void testSetHealingPower() {
-
+        System.out.println("Healing Power: "+tester.getHealingPower());
     }
 }
