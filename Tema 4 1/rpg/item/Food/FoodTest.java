@@ -21,7 +21,7 @@ public class FoodTest {
 
     @Test
     public void testPoisounus() {
-        PoisounousFood paellaNoValenciana = new PoisounousFood(paella);
+        PoisonousFoodDecorator paellaNoValenciana = new PoisonousFoodDecorator(paella);
 
         System.out.println("___________TestPoison___________");
         System.out.println("Before" + prota.health());

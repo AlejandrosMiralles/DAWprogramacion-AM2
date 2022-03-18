@@ -2,9 +2,9 @@ package rpg.item.Food;
 
 import rpg.character.Character;
 
-public class PoisounousFood extends FoodDecorator{
+public class PoisonousFoodDecorator extends FoodDecorator{
 
-    PoisounousFood(Food food){
+    PoisonousFoodDecorator(Food food){
         super(food);
         
     }
