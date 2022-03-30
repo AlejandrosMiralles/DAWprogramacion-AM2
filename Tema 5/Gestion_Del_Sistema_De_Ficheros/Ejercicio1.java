@@ -8,7 +8,7 @@ public class Ejercicio1 {
     private static Scanner input = new Scanner(System.in);
 
     private static void changeFile(File newFile){
-        userPosition = new File(newFile, ".");
+        userPosition = new File(newFile.getAbsolutePath());
 
         fileMenu();
     } 
@@ -28,14 +28,16 @@ public class Ejercicio1 {
                      " " + file.length() + " bytes\n" ;
             }
 
-            System.out.println("\n");
-            System.out.println("Lista de ficheros y directorios del fichero: " +
-                userPosition.getAbsolutePath());
-            System.out.println("____________________________________________________________");
-            System.out.println("0\tFather");
-            System.out.println(displayment);   
-            System.out.println("Enter an option (-1 or less to exit):"); 
         }
+
+        System.out.println("\n");
+        System.out.println("Lista de ficheros y directorios del fichero: " +
+            userPosition.getAbsolutePath());
+        System.out.println("____________________________________________________________");
+        System.out.println("0\tFather");
+        System.out.println(displayment);   
+        System.out.println("Enter an option (-1 or less to exit):"); 
+        
     }
 
     private static void menusAnswer(){
@@ -44,25 +46,37 @@ public class Ejercicio1 {
 
         if (usersAnswer == 0){
             File newFile = userPosition.getParentFile();
-            if (! (newFile == null) && newFile.canRead()){
+            if (! (newFile == null) &&
+             newFile.canRead()){
                 changeFile(newFile);
+            }else{
+                invalidAnswer();
             }
-        }else if(usersAnswer < 0){ input.close();}
+        }else if(usersAnswer < 0){ input.close(); /*The program ends*/}
         else{
             int filesSeen = 0;
             for (File file : listFiles) {
-                if (filesSeen++ + 1 == usersAnswer){
+                if (file.isHidden()){}
+                else if (filesSeen++ + 1 == usersAnswer){
                     if (file.isDirectory() && file.canRead()){
                         changeFile(file);
-                        break; //to end faster the program
+                        return; //to end faster the program
                     }
                 }
             }
+
+            invalidAnswer();
         }
     }
+
+    private static void invalidAnswer(){ menusAnswer();}
 
     public static void fileMenu(){
         showMenu();
         menusAnswer();
+    }
+
+    public static void main(String[] args) {
+        fileMenu();
     }
 }

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Sistema_De_Ficheros.Ejercicio2",
+            "projectName": "DAWprogramacion-AM2_41814cff"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Sistema_De_Ficheros.Ejercicio1",
+            "projectName": "DAWprogramacion-AM2_41814cff"
+        },
+        {
+            "type": "java",
             "name": "Launch Intervals1",
             "request": "launch",
             "mainClass": "Intervals.Intervals1",
