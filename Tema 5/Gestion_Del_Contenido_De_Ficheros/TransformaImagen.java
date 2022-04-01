@@ -83,13 +83,16 @@ public class TransformaImagen {
         newFile.createNewFile();
 
         copiaInfoImagenHastaLosColores(input, output);
-    
+        
+
+
         int infobyte, infobyte2, infobyte3;
 
         infobyte = input.read();
         infobyte2 = input.read();
         infobyte3 = input.read();
 
+    
         while(infobyte3!= -1){
             int result = infobyte + infobyte2 + infobyte3;
             result/=3;
@@ -102,7 +105,8 @@ public class TransformaImagen {
             infobyte2 = input.read();
             infobyte3 = input.read();
         }
-
+        
+    
     /*
         int[] bytes = new int[3];
 
@@ -110,17 +114,20 @@ public class TransformaImagen {
         bytes[1] = input.read();
         bytes[2] = input.read();
 
-        while(infobyte3!=-1){
+        while(bytes[2]!=-1){
             int result = bytes[0] + bytes[1] + bytes[2];
             result/=3;
 
-            output.write(result);
+            for (int nadaAHacer : bytes) {
+                output.write(result);
+            }
 
             bytes[0] = input.read();
             bytes[1] = input.read();
             bytes[2] = input.read();
         }
     */
+    
     
     input.close();
     output.close();
