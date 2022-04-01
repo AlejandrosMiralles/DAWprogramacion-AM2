@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TransformaImagen",
+            "request": "launch",
+            "mainClass": "TransformaImagen",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejercicio2",
             "request": "launch",
             "mainClass": "Gestion_Del_Sistema_De_Ficheros.Ejercicio2",
