@@ -6,87 +6,87 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Ejercicio2 {
-    
-private static File userPosition = new File(File.listRoots()[0], ".");
-private static Scanner input = new Scanner(System.in);
+        
+    private static File userPosition = new File(File.listRoots()[0],
+                 ".");
+    private static Scanner input = new Scanner(System.in);
 
-private static void changeFile(File newFile){
-    userPosition = new File(newFile.getAbsolutePath());
+    private static void changeFile(File newFile){
+        userPosition = new File(newFile.getAbsolutePath());
 
-    fileMenu();
-} 
+        fileMenu();
+    } 
 
-private static void showMenu(){
-    File[] filesToShow = userPosition.listFiles();
-    String flags = "----";
-    int actionNumber = 1;
+    private static void showMenu(){
+        File[] filesToShow = userPosition.listFiles();
+        String flags = "----";
+        int actionNumber = 1;
 
-    DateFormat formatter;
+        DateFormat formatter;
 
-    formatter = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, Locale.getDefault());
+        formatter = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, Locale.getDefault());
 
-    System.out.println("\n");
-    System.out.println("Lista de ficheros y directorios del fichero: " +
-        userPosition.getAbsolutePath());
-    System.out.println("____________________________________________________________");
-    System.out.println("0\tFather");
+        System.out.println("\n");
+        System.out.println("Lista de ficheros y directorios del fichero" + 
+                    ": " + userPosition.getAbsolutePath());
+        System.out.println("____________________________________________________________");
+        System.out.println("0\tFather");
 
-    for (File file : filesToShow) {
-        if (file.isHidden()){}
-        else{
-
-            if (file.isDirectory()){ flags = "d---";}
-            if (file.canRead()){ flags = flags.charAt(0) + "r" + "--";}
-            if (file.canWrite()){ flags = flags.substring(0, 2) + "w" + "-";}
-            if (file.canExecute()){ flags = flags.substring(0, 3) + "x";}
-
-            System.out.println(actionNumber++ + ".- \t" + flags + "\t" +
-              String.format("%-15d", file.length()) + 
-              formatter.format(file.lastModified()) + "\t" + 
-              file.getName());
-            
-        }
-    }
-    System.out.println("Enter an option (-1 or less to exit):");    
-}
-
-private static void menusAnswer(){
-    File[] listFiles = userPosition.listFiles();
-    int usersAnswer = input.nextInt();
-
-    if (usersAnswer == 0){
-        File newFile = userPosition.getParentFile();
-        if (! (newFile == null) &&
-         newFile.canRead()){
-            changeFile(newFile);
-        }else{
-            invalidAnswer();
-        }
-    }else if(usersAnswer < 0){ input.close(); /*The program ends*/}
-    else{
-        int filesSeen = 0;
-        for (File file : listFiles) {
+        for (File file : filesToShow) {
             if (file.isHidden()){}
-            else if (filesSeen++ + 1 == usersAnswer){
-                if (file.isDirectory() && file.canRead()){
-                    changeFile(file);
-                    return; //to end faster the program
-                }
+            else{
+                flags = "";
+                flags += file.isDirectory() ? "d" : "-";
+                flags += file.canRead() ? "r" : "-";
+                flags += file.canWrite() ? "w" : "-";
+                flags += file.canExecute() ? "x" : "-"; 
+
+                System.out.println(actionNumber++ + ".- \t" + flags + 
+                "\t" + String.format("%-15d", file.length()) + 
+                formatter.format(file.lastModified()) + "\t" + 
+                file.getName());
             }
         }
-
-        invalidAnswer();
+        System.out.println("Enter an option (-1 or less to exit):");    
     }
-}
 
-private static void invalidAnswer(){ menusAnswer();}
+    private static void menusAnswer(){
+        File[] listFiles = userPosition.listFiles();
+        int usersAnswer = input.nextInt();
 
-public static void fileMenu(){
-    showMenu();
-    menusAnswer();
-}
+        if (usersAnswer == 0){
+            File newFile = userPosition.getParentFile();
+            if (! (newFile == null) &&
+            newFile.canRead()){
+                changeFile(newFile);
+            }else{
+                invalidAnswer();
+            }
+        }else if(usersAnswer < 0){ input.close(); /*The program ends*/}
+        else{
+            int filesSeen = 0;
+            for (File file : listFiles) {
+                if (file.isHidden()){}
+                else if (filesSeen++ + 1 == usersAnswer){
+                    if (file.isDirectory() && file.canRead()){
+                        changeFile(file);
+                        return; //to end faster the program
+                    }
+                }
+            }
 
-public static void main(String[] args) {
-    fileMenu();
-}
+            invalidAnswer();
+        }
+    }
+
+    private static void invalidAnswer(){ menusAnswer();}
+
+    public static void fileMenu(){
+        showMenu();
+        menusAnswer();
+    }
+
+    public static void main(String[] args) {
+        fileMenu();
+    }
 }
