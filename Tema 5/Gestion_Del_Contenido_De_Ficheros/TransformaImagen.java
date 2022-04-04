@@ -1,3 +1,5 @@
+package Gestion_Del_Contenido_De_Ficheros;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
