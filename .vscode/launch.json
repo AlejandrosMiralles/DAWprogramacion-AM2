@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Mezclador",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.Mezclador",
+            "projectName": "DAWprogramacion-AM2_41814cff"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mezcla",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.Mezcla",
+            "projectName": "DAWprogramacion-AM2_41814cff"
+        },
+        {
+            "type": "java",
             "name": "Launch TransformaImagen",
             "request": "launch",
             "mainClass": "TransformaImagen",
