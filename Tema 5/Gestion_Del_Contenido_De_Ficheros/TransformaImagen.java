@@ -135,7 +135,36 @@ public class TransformaImagen {
     output.close();
     }
 
+    public void transformaRojo() throws IOException {
+        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_rojo.bmp");
+        FileInputStream input = new FileInputStream(f);
+        FileOutputStream output = new FileOutputStream(newFile);
 
+        newFile.createNewFile();
+
+        copiaInfoImagenHastaLosColores(input, output);
+    
+        int infobyte;
+
+        infobyte = input.read();
+        input.skip(2);
+
+    
+        while(infobyte!= -1){
+            output.write(infobyte);
+
+            for (int i = 0; i < 2; i++) {
+                output.write(0);
+            }
+
+            infobyte = input.read();
+            input.skip(2);
+
+        }
+
+        input.close();
+        output.close();
+    }
 
 
 
@@ -146,7 +175,7 @@ public class TransformaImagen {
         TransformaImagen ti = new TransformaImagen(f);
 
         long tiempoInicio=System.currentTimeMillis();
-        ti.transformaBlancoNegro();
+        ti.transformaRojo();
         System.out.println("\nTiempo de ejecucion de la transformacion a blanco y negro "+(
         System.currentTimeMillis()-tiempoInicio)+" milisegundos");
     }

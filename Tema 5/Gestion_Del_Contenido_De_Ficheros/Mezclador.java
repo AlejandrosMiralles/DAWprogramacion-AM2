@@ -78,7 +78,7 @@ class Mezclador {
         return lector;
     }
 
-    private final void prepararIngredientes()
+    private void prepararIngredientes()
          throws FileNotFoundException, IOException {
         
         File fichero;
