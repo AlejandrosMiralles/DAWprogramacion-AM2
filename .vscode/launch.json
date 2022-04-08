@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch ContarPalabras",
             "request": "launch",
+            "mainClass": "contarpalabras.ContarPalabras",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
+            "name": "Launch ContarPalabras",
+            "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.contarpalabras.ContarPalabras",
             "projectName": "DAWprogramacion-AM2_41814cff"
         },

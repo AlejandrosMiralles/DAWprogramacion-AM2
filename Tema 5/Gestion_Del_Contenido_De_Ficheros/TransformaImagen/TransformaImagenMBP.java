@@ -5,22 +5,22 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class TransformaImagen {
-    File f = null;
+public class TransformaImagenMBP {
+    File file = null;
 
-    public TransformaImagen(File fEnt) {
-        if (! fEnt.exists()){ System.out.println("El archivo no existe. Por favor, revise que "+
+    public TransformaImagenMBP(File enteredFile) {
+        if (! enteredFile.exists()){ System.out.println("El archivo no existe. Por favor, revise que "+
                 "el camino dado sea el correcto o que exista ese archivo");}
-        else if (! fEnt.getName().endsWith(".bmp")){ System.out.println("El archivo ha de terminar con la"+
+        else if (! enteredFile.getName().endsWith(".bmp")){ System.out.println("El archivo ha de terminar con la"+
                 " extension 'bmp'. Revise el archivo dado, por favor");}
         else{
-            f = fEnt;
+            file = enteredFile;
         }
     }
 
     
     private String getNombreSinExtension() {
-        return f.getName().split("\\.")[0];
+        return file.getName().split("\\.")[0];
     }
 
     private void copiaInfoImagenHastaLosColores(FileInputStream input, FileOutputStream output) throws IOException {
@@ -32,8 +32,8 @@ public class TransformaImagen {
     }
 
     public void transformaNegativo() throws IOException {
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_n.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getCanonicalPath().replaceAll(".bmp", "__n.bmp"));
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         int infobyte;
@@ -54,8 +54,8 @@ public class TransformaImagen {
     public void transformaOscuro() throws IOException {
         // Transformar a una imagen más oscura y guardar como *_o.bmp
         
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_o.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getParent(), getNombreSinExtension()+ "_o.bmp");
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         int infobyte;
@@ -78,8 +78,8 @@ public class TransformaImagen {
     public void transformaBlancoNegro() throws IOException {
         // Transformar a una imagen en blanco y negro y guardar como *_bn.bmp
 
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_bn.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getParent(), getNombreSinExtension()+ "_bn.bmp");
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         newFile.createNewFile();
@@ -136,8 +136,8 @@ public class TransformaImagen {
     }
 
     public void transformaRojo() throws IOException {
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_rojo.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getParent(), getNombreSinExtension()+ "_rojo.bmp");
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         newFile.createNewFile();
@@ -167,8 +167,8 @@ public class TransformaImagen {
     }
 
     public void transformaVerde() throws IOException {
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_verde.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getParent(), getNombreSinExtension()+ "_verde.bmp");
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         newFile.createNewFile();
@@ -200,8 +200,8 @@ public class TransformaImagen {
     }
 
     public void transformaAzul() throws IOException {
-        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_azul.bmp");
-        FileInputStream input = new FileInputStream(f);
+        File newFile = new File(file.getParent(), getNombreSinExtension()+ "_azul.bmp");
+        FileInputStream input = new FileInputStream(file);
         FileOutputStream output = new FileOutputStream(newFile);
 
         newFile.createNewFile();
@@ -241,10 +241,10 @@ public class TransformaImagen {
         
         File f = new File("Tema 5/Gestion_Del_Contenido_De_Ficheros/imagenes/penyagolosa.bmp");
         
-        TransformaImagen ti = new TransformaImagen(f);
+        TransformaImagenMBP ti = new TransformaImagenMBP(f);
 
         long tiempoInicio=System.currentTimeMillis();
-        ti.transformaBlancoNegro();
+        ti.transformaNegativo();
         System.out.println("\nTiempo de ejecucion de la transformacion a blanco y negro "+(
         System.currentTimeMillis()-tiempoInicio)+" milisegundos");
     }

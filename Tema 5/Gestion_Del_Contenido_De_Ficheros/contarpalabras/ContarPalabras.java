@@ -1,13 +1,13 @@
-package Gestion_Del_Contenido_De_Ficheros.contarpalabras;
+package contarpalabras; 
 
 import java.io.*;
 import java.util.Scanner;
 
 public class ContarPalabras {
-    BufferedReader lector;
-    String cadenaAContar = "-Tema";
+    private BufferedReader lector;
+    private String cadenaAContar;
     
-    void prepararingredientes(){
+    ContarPalabras(){
         Scanner input = new Scanner(System.in);
         String rutaYNombre;
         File archivo;
@@ -16,7 +16,7 @@ public class ContarPalabras {
         rutaYNombre = input.nextLine();
 
         System.out.println("Qué palabra quieres contar?");
-        //cadenaAContar = input.next();
+        cadenaAContar = input.next();
 
         input.close();
 
@@ -32,21 +32,25 @@ public class ContarPalabras {
 
     }
 
-    void setCadenaAContar(String newCadena){ cadenaAContar = newCadena;}
+    public void setCadenaAContar(String newCadena){ cadenaAContar = newCadena;}
 
     private static int contarPalabraPorLinea(String linea, String aContar){
+        if (linea == null || aContar == ""){ return 0;}
+
         String[] palabrasDeLaLinea = linea.split(" ");
 
         int contador = 0;
 
         for (String string : palabrasDeLaLinea) {
-            if (string == aContar){ contador++;}
+            if (string.equals(aContar)){ 
+                contador++;
+            }
         }
 
         return contador;
     }
 
-    int contarPalabras(){
+    public int contarPalabras(){
         int contador = 0;
         String linea = "";
 
@@ -62,7 +66,7 @@ public class ContarPalabras {
         return contador;
     }
 
-    int contarPalabras(String cadenaAContar){
+    public int contarPalabras(String cadenaAContar){
         int contador = 0;
         String linea = "";
 
@@ -81,7 +85,6 @@ public class ContarPalabras {
     public static void main(String[] args) {
         ContarPalabras tester = new ContarPalabras();
 
-        tester.prepararingredientes();
         System.out.println(tester.contarPalabras());
     }
 }

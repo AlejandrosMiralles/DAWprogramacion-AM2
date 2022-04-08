@@ -5,10 +5,11 @@ import java.io.FileWriter;
 
 public class Primos {
 
+    //Se considera el 1 como primo
     public static boolean esPrimo(int posiblePrimo){
         if (posiblePrimo<1){ return false;}
 
-        for (int i = 2; i < posiblePrimo; i++) {
+        for (int i = 4; i < posiblePrimo; i++) {
             if (posiblePrimo%i == 0){
                 return false;
             }
@@ -19,11 +20,10 @@ public class Primos {
 
     public static int siguientePrimo(int numeroActual){
         int primo = numeroActual;
-        for (int i = 1 + numeroActual; !esPrimo(i) ; i++) {
-            primo = i;
-        }
 
-        return ++primo;
+        while (! esPrimo(++primo)) {}
+
+        return primo;
     }
 
     public static void imprimirPrimos(int limite){
@@ -31,7 +31,7 @@ public class Primos {
         String nombreArchivo = "primos.dat";
         File destino = new File(ruta + nombreArchivo);
         FileWriter escritor;
-        int primo = 1;
+        int primo = 1; //El 0 no es primo
 
         try {
             destino.createNewFile();
@@ -39,16 +39,11 @@ public class Primos {
 
             if (limite < 1){ escritor.close(); return ;}
 
-            escritor.write("1\n");
-
-            while(limite > primo){
+            do {
+                escritor.write(primo + "\n");
+                
                 primo = siguientePrimo(primo);
-
-                if (primo < limite){
-                    escritor.write("" + primo + "\n");
-                }
-
-            }
+            } while (limite > primo);
 
             escritor.close();
 
