@@ -23,6 +23,13 @@
             "name": "Launch TransformaImagen",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.TransformaImagen",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
+            "name": "Launch TransformaImagen",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.TransformaImagen",
             "projectName": "DAWprogramacion-AM2_41814cff"
         },
         {
