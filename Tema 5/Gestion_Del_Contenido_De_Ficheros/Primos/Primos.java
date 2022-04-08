@@ -18,12 +18,12 @@ public class Primos {
     }
 
     public static int siguientePrimo(int numeroActual){
-        int primo = -1;
-        for (int i = 1+ numeroActual; !esPrimo(i) ; i++) {
+        int primo = numeroActual;
+        for (int i = 1 + numeroActual; !esPrimo(i) ; i++) {
             primo = i;
         }
 
-        return primo;
+        return ++primo;
     }
 
     public static void imprimirPrimos(int limite){
@@ -31,7 +31,7 @@ public class Primos {
         String nombreArchivo = "primos.dat";
         File destino = new File(ruta + nombreArchivo);
         FileWriter escritor;
-        int primo = 2;
+        int primo = 1;
 
         try {
             destino.createNewFile();
@@ -58,8 +58,6 @@ public class Primos {
     }
 
     public static void main(String[] args) {
-        System.out.println("Empezando a correr");
         imprimirPrimos(500);
-        System.out.println("Se ha dejado de correr");
     }
 }
