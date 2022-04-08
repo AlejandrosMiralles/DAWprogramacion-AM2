@@ -6,10 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 class LeerPrimos{
-    static void leerPrimos(){
+    public static void leerLineas(String ruta, String nombre){
         File libro;
-        String ruta = "Tema 5/Gestion_Del_Contenido_De_Ficheros/Primos/";
-        String nombre = "primos.dat";
         BufferedReader lector;
         String contenido = "";
 
@@ -33,7 +31,7 @@ class LeerPrimos{
     }
 
     public static void main(String[] arg){
-        leerPrimos();
+        leerLineas("Tema 5/Gestion_Del_Contenido_De_Ficheros/Primos/", "primos.dat");
     }
 
 }
