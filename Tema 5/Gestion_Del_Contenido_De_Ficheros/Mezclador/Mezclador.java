@@ -84,7 +84,7 @@ class Mezclador {
         File fichero;
         String ruta, nombreFichero;
 
-        ruta = "Tema 5/Gestion_Del_Contenido_De_Ficheros/ficherosDeTexto/";
+        ruta = "Tema 5/Gestion_Del_Contenido_De_Ficheros/Mezclador/ficherosDeTexto/";
 
         System.out.println("Escriba el nombre del primer fichero: ");
         nombreFichero = input.next();

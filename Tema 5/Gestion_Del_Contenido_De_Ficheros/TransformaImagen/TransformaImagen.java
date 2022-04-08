@@ -166,8 +166,77 @@ public class TransformaImagen {
         output.close();
     }
 
+    public void transformaVerde() throws IOException {
+        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_verde.bmp");
+        FileInputStream input = new FileInputStream(f);
+        FileOutputStream output = new FileOutputStream(newFile);
 
+        newFile.createNewFile();
 
+        copiaInfoImagenHastaLosColores(input, output);
+    
+        int infobyte;
+
+        input.skip(1);
+        infobyte = input.read();
+        input.skip(1);
+
+    
+        while(infobyte!= -1){
+            output.write(infobyte);
+
+            for (int i = 0; i < 2; i++) {
+                output.write(0);
+            }
+
+            input.skip(1);
+            infobyte = input.read();
+            input.skip(1);
+
+        }
+
+        input.close();
+        output.close();
+    }
+
+    public void transformaAzul() throws IOException {
+        File newFile = new File(f.getParent(), getNombreSinExtension()+ "_azul.bmp");
+        FileInputStream input = new FileInputStream(f);
+        FileOutputStream output = new FileOutputStream(newFile);
+
+        newFile.createNewFile();
+
+        copiaInfoImagenHastaLosColores(input, output);
+    
+        int infobyte;
+
+        input.skip(2);
+        infobyte = input.read();
+
+    
+        while(infobyte!= -1){
+            output.write(infobyte);
+
+            for (int i = 0; i < 2; i++) {
+                output.write(0);
+            }
+
+            input.skip(2);
+            infobyte = input.read();
+        }
+
+        input.close();
+        output.close();
+    }
+
+    public void transformaUnColor(char color) throws IOException{
+        switch(color){
+            case 'r': transformaRojo(); break;
+            case 'a': transformaAzul(); break;
+            case 'v': transformaVerde(); break;
+            default:
+        }
+    }
     public static void main(String[] args) throws IOException {
         
         File f = new File("Tema 5/Gestion_Del_Contenido_De_Ficheros/imagenes/penyagolosa.bmp");
@@ -175,7 +244,7 @@ public class TransformaImagen {
         TransformaImagen ti = new TransformaImagen(f);
 
         long tiempoInicio=System.currentTimeMillis();
-        ti.transformaRojo();
+        ti.transformaBlancoNegro();
         System.out.println("\nTiempo de ejecucion de la transformacion a blanco y negro "+(
         System.currentTimeMillis()-tiempoInicio)+" milisegundos");
     }
