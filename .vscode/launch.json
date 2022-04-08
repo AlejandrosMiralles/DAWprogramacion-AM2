@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LeerPrimos",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.Primos.LeerPrimos",
+            "projectName": "DAWprogramacion-AM2_41814cff"
+        },
+        {
+            "type": "java",
             "name": "Launch Primos",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.Primos.Primos",
