@@ -1,17 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "Arrays",
-        "Controles",
-        "Extra",
-        "Extra\\Java",
-        "Extra\\Python",
-        "Strings",
-        "Tema 4 1",
-        "Tema 4 1\\Alumnos",
-        "Tema 4 1\\Clock",
-        "Tema 4 1\\Heater",
-        "Tema 4 1\\Mail",
         "Tema 5",
-        "Tema 5\\Gestion_Del_Contenido_De_Ficheros"
+        "Tema 4 1",
+        "Strings",
+        "Extra",
+        "Controles",
+        "Arrays",
+        "Tema 2"
     ]
 }

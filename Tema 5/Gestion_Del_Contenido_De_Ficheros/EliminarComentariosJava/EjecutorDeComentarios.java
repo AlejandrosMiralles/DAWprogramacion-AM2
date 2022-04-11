@@ -33,11 +33,11 @@ public class EjecutorDeComentarios {
                     fila = fila.split("//")[0];
                 }
 
-                System.out.println(fila);
-
-                unamuno.write(fila);
+                unamuno.write(fila + "\n");
 
                 unamuno.flush();
+
+                fila = lector.readLine();
             }
 
             unamuno.close();
@@ -63,9 +63,11 @@ public class EjecutorDeComentarios {
             do {
                 fila = lector.readLine();
 
-                unamuno.write(fila);
+                unamuno.write(fila + "\n");
 
                 unamuno.flush();
+
+                fila = lector.readLine();
             } while (fila != null);
 
             lector.close();

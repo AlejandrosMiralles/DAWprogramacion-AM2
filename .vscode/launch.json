@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EjecutorDeComentarios",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.EliminarComentariosJava.EjecutorDeComentarios",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
+            "name": "Launch Entradaprueba",
+            "request": "launch",
+            "mainClass": "Entradaprueba",
+            "projectName": "DAWprogramacion-AM2_f5a3e0c6"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjecutorDeComentarios",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.EliminarComentariosJava.EjecutorDeComentarios",
+            "projectName": "DAWprogramacion-AM2_f5a3e0c6"
+        },
+        {
+            "type": "java",
             "name": "Launch ContarPalabras",
             "request": "launch",
             "mainClass": "contarpalabras.ContarPalabras",
