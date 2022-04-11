@@ -11,11 +11,19 @@ public class EjecutorDeComentarios {
                                                     "temporal.java"); 
     private File ficheroJava;
 
-    boolean tieneComentariosBarraBarra(String linea){
+    private boolean tieneComentariosBarraBarra(String linea){
         return linea.contains("//");
     }
 
-    void eliminarComentariosJavaBarraBarra(){
+    private boolean tieneComentariosEnBloque(String linea){
+        return linea.contains("/*");
+    }
+
+    private boolean tieneComentarios(String linea){
+        return tieneComentariosBarraBarra(linea) || tieneComentariosEnBloque(linea);
+    }
+
+    private void eliminarComentariosJavaBarraBarra(){
         BufferedReader lector;
         FileWriter unamuno;
         String fila;
@@ -34,7 +42,6 @@ public class EjecutorDeComentarios {
                 }
 
                 unamuno.write(fila + "\n");
-
                 unamuno.flush();
 
                 fila = lector.readLine();
@@ -48,7 +55,51 @@ public class EjecutorDeComentarios {
         }
     }
 
-    void traspasarContenidoJava(){
+    private void eliminarComentariosJava(){
+        BufferedReader lector;
+        FileWriter unamuno;
+        String fila;
+
+        try {
+            ficheroJava.createNewFile();
+            ficheroTemporal.createNewFile();
+
+            lector = new BufferedReader(new FileReader(ficheroJava));
+            unamuno = new FileWriter(ficheroTemporal);
+
+            fila = lector.readLine();
+            while(fila != null){
+                if (tieneComentarios(fila)){
+                    if (tieneComentariosBarraBarra(fila)){
+                        fila = fila.split("//")[0];
+                    }
+
+                    String copiaFila = fila;
+
+                    /*
+                    for (int i = 0; tieneComentariosEnBloque(fila); i++) {
+                        
+                    }
+                    */
+
+                    fila = copiaFila.replace("/*.+*/", ""); //Repasar
+                }
+
+                unamuno.write(fila + "\n");
+                unamuno.flush();
+
+                fila = lector.readLine();
+            }
+
+            unamuno.close();
+            lector.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void traspasarContenidoJava(){
         BufferedReader lector;
         FileWriter unamuno;
         String fila;
@@ -60,15 +111,14 @@ public class EjecutorDeComentarios {
             lector = new BufferedReader(new FileReader(ficheroTemporal));
             unamuno = new FileWriter(ficheroJava);
 
-            do {
-                fila = lector.readLine();
 
+            fila = lector.readLine();
+            while(fila != null){
                 unamuno.write(fila + "\n");
-
                 unamuno.flush();
 
                 fila = lector.readLine();
-            } while (fila != null);
+            }
 
             lector.close();
             unamuno.close();
@@ -79,12 +129,19 @@ public class EjecutorDeComentarios {
         }
     }
 
-    void eliminarComentariosJavaBarraBarra(File archivoAModificar){
+    public void eliminarComentariosJavaBarraBarra(File archivoAModificar){
         ficheroJava = archivoAModificar;
 
         eliminarComentariosJavaBarraBarra();
         traspasarContenidoJava();
-    }    
+    }  
+    
+    public void eliminarComentariosJava(File archivoAModificar){
+        ficheroJava = archivoAModificar;
+
+        eliminarComentariosJava();
+        traspasarContenidoJava();
+    }
 
     public static void main(String[] args) {
         EjecutorDeComentarios tester = new EjecutorDeComentarios();
