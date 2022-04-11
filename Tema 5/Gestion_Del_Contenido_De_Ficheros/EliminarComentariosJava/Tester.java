@@ -1,14 +1,14 @@
 package Gestion_Del_Contenido_De_Ficheros.EliminarComentariosJava;
 
 class Tester{
-    //Comentario
-    int algo; //Comentario
+    /
+    int algo; /
 
-    Tester(){
-        /**
-         * Comentario
-         */
+    Tester(){ /
+        
 
-        /**Comentario */ algo = 3; /**COmentario */
+        algo = 3 + "No me borréis esto porfa /* holi */ //".length(); 
     }
 }
+
+
