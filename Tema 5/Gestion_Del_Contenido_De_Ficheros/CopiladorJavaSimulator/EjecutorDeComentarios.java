@@ -1,4 +1,4 @@
-package Gestion_Del_Contenido_De_Ficheros.EliminarComentariosJava;
+package Gestion_Del_Contenido_De_Ficheros.CopiladorJavaSimulator;
 
 import java.io.BufferedReader;
 import java.io.File;

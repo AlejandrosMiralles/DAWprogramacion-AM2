@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EjecutorDeEspacios",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.CopiladorJavaSimulator.EjecutorDeEspacios",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch EjecutorDeComentarios",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.EliminarComentariosJava.EjecutorDeComentarios",
