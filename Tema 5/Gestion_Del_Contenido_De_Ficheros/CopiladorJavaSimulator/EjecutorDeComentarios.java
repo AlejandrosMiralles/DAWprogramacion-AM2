@@ -22,38 +22,6 @@ public class EjecutorDeComentarios {
     
     private int estado = 0;
 
-    /* private void eliminarComentariosJavaBarraBarra(int mec){
-        BufferedReader lector;
-        FileWriter unamuno;
-        String fila;
-
-        try {
-            ficheroJava.createNewFile();
-            ficheroTemporal.createNewFile();
-
-            lector = new BufferedReader(new FileReader(ficheroJava));
-            unamuno = new FileWriter(ficheroTemporal);
-
-            fila = lector.readLine();
-            while(fila != null){
-                if (tieneComentariosBarraBarra(fila)){
-                    fila = fila.split("//")[0];
-                }
-
-                unamuno.write(fila + "\n");
-                unamuno.flush();
-
-                fila = lector.readLine();
-            }
-
-            unamuno.close();
-            lector.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    } */
-
     private void eliminarComentariosJavaBarraBarra(){
         BufferedReader lector;
         FileWriter unamuno;
@@ -100,7 +68,6 @@ public class EjecutorDeComentarios {
                 }
 
                 unamuno.write(primerChar);
-                unamuno.flush();
 
                 segundoChar = primerChar;
                 primerChar = (char) lector.read();
@@ -120,8 +87,6 @@ public class EjecutorDeComentarios {
         FileWriter unamuno;
         char primerChar, segundoChar = 0;
 
-        
-
         try {
             ficheroJava.createNewFile();
             ficheroTemporal.createNewFile();
@@ -133,24 +98,38 @@ public class EjecutorDeComentarios {
             while(primerChar != (char) -1){
                 switch(estado){
                     case POR_LEER:
-                        if (primerChar == '"'){ estado = CADENA_DE_TEXTO; break;}
-                        if (primerChar == '/'){ estado = POSIBLE_COMENTARIO; continue; }
+                        if (primerChar == '"'){ 
+                            estado = CADENA_DE_TEXTO;
+                            break;
+                        }
+
+                        if (primerChar == '/'){ 
+                            estado = POSIBLE_COMENTARIO; 
+                            continue; 
+                        }
+                        
                         break;
 
+
                     case COMENTARIO_EN_LINEA:
-                        if ( primerChar == '\n'){ estado = POR_LEER; unamuno.write(primerChar);} 
+                        if ( primerChar == '\n'){ 
+                            estado = POR_LEER; 
+                            unamuno.write(primerChar);
+                        } 
                         segundoChar = primerChar;
                         primerChar = (char) lector.read();
                         continue;
 
+
                     case COMENTARIO_EN_BLQOUE: 
                         if (segundoChar == '*' && primerChar == '/'){
-                             estado = POR_LEER;
+                            estado = POR_LEER;
                         }
                         segundoChar = primerChar;
                         primerChar = (char) lector.read();
                         continue;        
 
+                        
                     case CADENA_DE_TEXTO:
                         if (primerChar == '"'){ estado = POR_LEER;} 
                         break;

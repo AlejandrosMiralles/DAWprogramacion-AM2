@@ -15,8 +15,7 @@ class Mezclador {
     private BufferedReader lector2;
     private final Scanner input = new Scanner(System.in);
 
-    @Override
-    public void finalize() {
+    public void terminar() {
         input.close();
     }
 
@@ -118,7 +117,7 @@ class Mezclador {
     public static void main(String[] args) {
         Mezclador tester = new Mezclador();
         tester.mezclar();
-        tester.finalize();
+        tester.terminar();
         
     }
 }

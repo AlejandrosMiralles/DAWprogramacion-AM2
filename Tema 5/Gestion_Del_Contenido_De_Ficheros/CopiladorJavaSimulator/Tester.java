@@ -1,11 +1,19 @@
 package Gestion_Del_Contenido_De_Ficheros.CopiladorJavaSimulator;
 
 class Tester{
-    
-    int algo; 
+    // Comentario
+    int algo; //Comerntario
 
     Tester(){ 
-         algo =  3 + "No me borréis esto porfa /* holi */ //".length(); 
+        /**
+         * Comentario
+         */
+
+         /**
+          * Comentario
+          */ algo =  3 + "No me borréis esto porfa /* holi */ //".length(); /* Comentario */ /**
+          Comentario
+           */
     }
 }
 
