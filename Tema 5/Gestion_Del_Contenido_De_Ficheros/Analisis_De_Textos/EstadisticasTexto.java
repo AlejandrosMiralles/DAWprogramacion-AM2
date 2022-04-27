@@ -34,8 +34,8 @@ public class EstadisticasTexto {
         while(caracter != (char)-1){
             String aComprobar = "" + Character.toLowerCase(caracter);
 
-            if (aComprobar.matches("[aeiou]")){ vocales++;}
-            else if(aComprobar.matches("[a-z]")){ consonantes++;}
+            if (aComprobar.matches("[aeiou]|[á-ú]")){ vocales++;}
+            else if(aComprobar.matches("[a-z]|[ñç]")){ consonantes++;}
             else if(aComprobar.equals(" ")){ espacios++;}
             else if(aComprobar.equals("\n")){ lineas++;}
             else if(aComprobar.equals("\t")){ tabuladores++;}
