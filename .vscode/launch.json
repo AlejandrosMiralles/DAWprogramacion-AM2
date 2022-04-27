@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EstadisticasTexto",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.Analisis_De_Textos.EstadisticasTexto",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch EjecutorDeEspacios",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.CopiladorJavaSimulator.EjecutorDeEspacios",
