@@ -1,7 +1,5 @@
 package rpg.item.Potion;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import rpg.character.Character;

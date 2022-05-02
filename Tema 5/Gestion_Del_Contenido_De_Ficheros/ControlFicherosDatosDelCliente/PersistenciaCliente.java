@@ -41,7 +41,6 @@ public class PersistenciaCliente {
         Cliente clienteAAnadir;
         String cliente = lector.readLine();
         while( cliente != null || cliente == ""){
-            //TODO
             clienteInfo = cliente.split(", ");
 
             if (clienteInfo.length == 5){
@@ -63,9 +62,11 @@ public class PersistenciaCliente {
     public static void main(String[] args) throws IOException {
         //Test del write()
         
+        // /*
+
         ArrayList<Cliente> listaDeClientes = new ArrayList<Cliente>();
 
-        listaDeClientes.add(new Cliente("254735d", "Julio", "Puff puff", "kk@du.com"));
+        listaDeClientes.add(new Cliente("235d", "Julio", "Puff puff", "kk@du.com"));
         listaDeClientes.add(new Cliente("254354735d", "Julia", "Puff pufff", "kak@com3"));
         listaDeClientes.add(new Cliente("23452354F", "Julie", "Puff puffff", "kk.com"));
         listaDeClientes.add(new Cliente("23452345354F", "Juliu", "Puff pufffff", "kkcom"));

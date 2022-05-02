@@ -4,8 +4,6 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-import rpg.character.stat.*;
-
 public class RaceTest {
 
     static Demon tester = new Demon();

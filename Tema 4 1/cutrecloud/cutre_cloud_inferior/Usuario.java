@@ -95,13 +95,10 @@ public class Usuario implements ParserXML {
            String password = doc.getElementsByTagName("password").item(0).getTextContent();
            newUser = new Usuario(email, password);
        } catch (ParserConfigurationException e) {
-           // TODO Auto-generated catch block
            e.printStackTrace();
        } catch (SAXException e) {
-           // TODO Auto-generated catch block
            e.printStackTrace();
        } catch (IOException e) {
-           // TODO Auto-generated catch block
            e.printStackTrace();
        }
        
