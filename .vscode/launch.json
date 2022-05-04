@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PersistenciaClienteSerializado",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.PersistenciaClienteSerializado",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch PersistenciaCliente",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.PersistenciaCliente",

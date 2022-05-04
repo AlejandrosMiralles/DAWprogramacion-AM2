@@ -1,9 +1,11 @@
 package Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente;
 
-public class Persona {
-    private String nif;
-    private String nombre;
-    private String apellidos;
+import java.io.Serializable;
+
+public class Persona implements Serializable {
+    protected String nif;
+    protected String nombre;
+    protected String apellidos;
 
     protected String getNif() {
         return nif;
