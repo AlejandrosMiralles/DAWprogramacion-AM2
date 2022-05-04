@@ -3,10 +3,9 @@ package Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.Serializable;
 import java.util.HashSet;
 
-public class Cliente extends Persona implements Serializable {
+public class Cliente extends Persona {
     private int id;
     private String email;
 
