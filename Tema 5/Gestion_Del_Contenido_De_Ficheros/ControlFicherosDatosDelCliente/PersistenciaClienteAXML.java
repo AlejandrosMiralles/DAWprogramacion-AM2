@@ -91,7 +91,11 @@ public class PersistenciaClienteAXML {
         NodeList clientes = root.getElementsByTagName("Cliente");
 
         for (int i = 0; i < clientes.getLength(); i++) {
+            //Operacion complicada, pero resultado bonito
             elementoClienteToString(xmlResultado, clientes, i);
+
+            //Operacion Sencilla, pero resultado feo 
+            //xmlResultado.append(clientes.item(i).getTextContent());
         }
 
         return xmlResultado.toString();
