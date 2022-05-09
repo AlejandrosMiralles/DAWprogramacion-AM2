@@ -20,6 +20,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+
 public class PersistenciaClienteAXML {
     public static void write(ArrayList<Cliente> listaDeClientes) throws IOException,
                                 FileNotFoundException, ParserConfigurationException,

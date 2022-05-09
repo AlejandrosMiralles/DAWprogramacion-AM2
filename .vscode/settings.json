@@ -7,5 +7,9 @@
         "Controles",
         "Arrays",
         "Tema 2"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/alumno/Descargas/gson-2.6.2.jar"
     ]
 }
