@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PersistenciaClienteAJson",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.PersistenciaClienteAJson",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch PersistenciaClienteAXML",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.PersistenciaClienteAXML",
