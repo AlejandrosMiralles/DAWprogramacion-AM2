@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AnalizadorDeLibrosXML",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.LibrosXML.AnalizadorDeLibrosXML",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch PersistenciaClienteAJson",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.PersistenciaClienteAJson",
