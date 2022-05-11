@@ -10,6 +10,7 @@
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "/home/alumno/Descargas/gson-2.6.2.jar"
+        "/home/alumno/Descargas/gson-2.6.2.jar",
+        "/home/alumno/Desktop/jsoup-1.14.3.jar"
     ]
 }
