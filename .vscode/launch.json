@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AnalizadorDePaginasWebJustJsoup",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.AnalizadorDePaginasWeb.AnalizadorDePaginasWebJustJsoup",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch AnalizadorDepaginasWeb",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.AnalizadorDePaginasWeb.AnalizadorDepaginasWeb",
