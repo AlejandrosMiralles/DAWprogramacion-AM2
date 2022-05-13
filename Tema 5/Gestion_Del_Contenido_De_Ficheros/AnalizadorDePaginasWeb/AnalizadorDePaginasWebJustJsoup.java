@@ -41,6 +41,7 @@ public class AnalizadorDePaginasWebJustJsoup {
         List<String> resultados = hijosDelBody.eachAttr(VALOR_A_BUSCAR);
 
         for (String resultadoAAnadir : resultados) {
+            System.out.println(resultadoAAnadir);
             contenidoDeseado.append(resultadoAAnadir + "\n");
         }
         return contenidoDeseado.toString();
@@ -86,23 +87,26 @@ public class AnalizadorDePaginasWebJustJsoup {
             final String ETIQUETA_IMAGEN = "img";
             final String ATRIBUTO_URL_IMAGEN = "src";
             String urlRelativaImagenes = sacarAtributos(ETIQUETA_IMAGEN, ATRIBUTO_URL_IMAGEN);
-            //TODO: arreglar esto
             LinkedHashSet<String> urlAbsolutaImagenes = new LinkedHashSet<String>();
             for (String urlRelativa : urlRelativaImagenes.split("\n")) {
-                urlAbsolutaImagenes.add(document.location() + "/" + urlRelativa.replaceAll("/+", "/"));
+                urlAbsolutaImagenes.add(document.location() + "/../" + urlRelativa);
             }
 
-            int numeroArchivo = 0;
             File ficheroDestino;
             URL urlDescargaDeLaImagen;
-            Iterator<String> iterator = urlAbsolutaImagenes.iterator();
+            Iterator<String> iterator = urlAbsolutaImagenes.iterator();  
+            String nombreYextensionFichero;
             while(iterator.hasNext()){
-                ficheroDestino = new File(carpetaDestino.getAbsolutePath() + "/" + ++numeroArchivo + ".png");
                 urlDescargaDeLaImagen = new URL(iterator.next());
-
+                nombreYextensionFichero = urlDescargaDeLaImagen.getFile().replaceAll(".*/", "");
+                ficheroDestino = new File(carpetaDestino.getAbsolutePath() + "/" + nombreYextensionFichero);
+                
                 descargarImagen(urlDescargaDeLaImagen, ficheroDestino);
             }
+
             return seHaDescargadoAlgo;
+
+
         } catch (Exception e) {
             System.out.println("Error:\n\t" + e.getMessage() + "\n\n" + e);
 
@@ -111,16 +115,28 @@ public class AnalizadorDePaginasWebJustJsoup {
         }
     }
 
-    private void descargarImagen(URL url, File nuevoFichero) throws Exception{
-        OutputStream escritor = new FileOutputStream(nuevoFichero);
-        InputStream lector = url.openStream();
+    public static boolean descargarImagen(URL url, File nuevoFichero) throws Exception{
+        boolean seHaDescargado = true;
 
-        for (int byteALeer = lector.read(); byteALeer > 0; byteALeer = lector.read()) {
-            escritor.write(byteALeer);
+        try {    
+            OutputStream escritor = new FileOutputStream(nuevoFichero);
+            InputStream lector = url.openStream();
+
+            for (int byteALeer = lector.read(); byteALeer != -1; byteALeer = lector.read()) {
+                escritor.write(byteALeer);
+            }
+
+            escritor.close();
+            lector.close();
+
+            return seHaDescargado;
+
+        } catch (Exception e) {
+            System.err.println("Error:\n\t"+ e.getMessage());
+            
+            seHaDescargado = false;
+            return seHaDescargado;
         }
-
-        escritor.close();
-        lector.close();
     }
 
     public void setDocument(URL newURl) throws IOException{
@@ -131,21 +147,5 @@ public class AnalizadorDePaginasWebJustJsoup {
         document = Jsoup.parse(newURl, timeOut);
     }
 
-    private void metodoParaTestear() throws Exception{
-        String nombre = "imagenesDescargadas";
-        String ruta = "Tema 5/Gestion_Del_Contenido_De_Ficheros/AnalizadorDePaginasWeb/";
-
-        descargarImagenes(
-            new File(ruta + nombre));
-    }
-
-    public static void main(String[] args) {
-        try {
-            new AnalizadorDePaginasWebJustJsoup(new URL("https://alejandrosmiralles.github.io/AlejMiraFFVII/Modo%20d%C3%ADa/Monstruos/Monstruos.html"))
-                                                .metodoParaTestear();
-        } catch (Exception e) {
-            System.err.println("Error\n\t" + e.getMessage() + "\n\n\n" + e);
-        }
-    }
 }
 

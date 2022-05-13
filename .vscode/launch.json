@@ -6,6 +6,26 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EstadisticasTexto",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.Analisis_De_Textos.EstadisticasTexto",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.AnalizadorDePaginasWeb.AnalizadorDePaginasWebJustJsoup"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnalizadorDePaginasWebJustJsoup",
+            "request": "launch",
+            "mainClass": "Gestion_Del_Contenido_De_Ficheros.AnalizadorDePaginasWeb.AnalizadorDePaginasWebJustJsoup",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch AnalizadorDePaginasWebJustJsoup",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.AnalizadorDePaginasWeb.AnalizadorDePaginasWebJustJsoup",
