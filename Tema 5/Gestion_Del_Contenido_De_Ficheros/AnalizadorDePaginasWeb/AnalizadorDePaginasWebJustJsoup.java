@@ -89,7 +89,7 @@ public class AnalizadorDePaginasWebJustJsoup {
             //TODO: arreglar esto
             LinkedHashSet<String> urlAbsolutaImagenes = new LinkedHashSet<String>();
             for (String urlRelativa : urlRelativaImagenes.split("\n")) {
-                urlAbsolutaImagenes.add(document.location() + urlRelativa);
+                urlAbsolutaImagenes.add(document.location() + "/" + urlRelativa.replaceAll("/+", "/"));
             }
 
             int numeroArchivo = 0;
@@ -104,6 +104,8 @@ public class AnalizadorDePaginasWebJustJsoup {
             }
             return seHaDescargadoAlgo;
         } catch (Exception e) {
+            System.out.println("Error:\n\t" + e.getMessage() + "\n\n" + e);
+
             seHaDescargadoAlgo = false;
             return seHaDescargadoAlgo;
         }
