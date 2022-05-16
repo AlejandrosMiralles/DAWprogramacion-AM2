@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HumanReadableTime",
+            "request": "launch",
+            "mainClass": "Java.HumanReadableTime",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch EstadisticasTexto",
             "request": "launch",
             "mainClass": "Gestion_Del_Contenido_De_Ficheros.Analisis_De_Textos.EstadisticasTexto",
