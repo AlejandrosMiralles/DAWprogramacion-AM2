@@ -12,7 +12,7 @@ public class HumanReadableTime {
         minutesTime = (seconds / 60) % 60;
         hoursTime = seconds / 3600;
 
-        return String.format("%2d:%2d:%2d", hoursTime, minutesTime, secondsTime).replaceAll(" ", "0") ;
+        return String.format("%02d:%02d:%02d", hoursTime, minutesTime, secondsTime);
     }
 
 
