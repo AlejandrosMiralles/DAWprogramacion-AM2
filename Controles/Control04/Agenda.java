@@ -1,5 +1,7 @@
 package Control04;
 
+//http://www.chuidiang.org/java/ficheros/ObjetosFichero.php
+
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -22,7 +24,7 @@ class Agenda {
 
     public static void userWriter() throws IOException {
         String givenName;
-        String username;
+        String lastname;
         String email;
         String phoneNumber;
         User userToWrite;
@@ -30,28 +32,28 @@ class Agenda {
         Scanner input = new Scanner(System.in);
 
         givenName = input.next();
-        username = input.next();
+        lastname = input.next();
         email = input.next();
         phoneNumber = input.next();
 
         input.close();
 
-        userToWrite = new User(givenName, username, email, phoneNumber);
+        userToWrite = new User(givenName, lastname, email, phoneNumber);
 
-        writeUsersAsText(givenName, username, email, phoneNumber);
+        writeUsersAsText(givenName, lastname, email, phoneNumber);
 
         writeUsersAsObjects(userToWrite);
     }
 
-    public static void userWriter(String givenName, String username, String email, String phoneNumber)
+    public static void userWriter(String givenName, String lastname, String email, String phoneNumber)
                 throws IOException {
-        User userToWrite = new User(givenName, username, email, phoneNumber);
+        User userToWrite = new User(givenName, lastname, email, phoneNumber);
 
-        writeUsersAsText(givenName, username, email, phoneNumber);
+        writeUsersAsText(givenName, lastname, email, phoneNumber);
         writeUsersAsObjects(userToWrite);
     }
 
-    private static void writeUsersAsText(String givenName, String username, String email, String phoneNumber) 
+    private static void writeUsersAsText(String givenName, String lastname, String email, String phoneNumber) 
                                         throws IOException{
         File fileToWrite = new File(path + usersAsTextFileName);
         boolean dontOverwrite = true;
@@ -61,7 +63,7 @@ class Agenda {
         FileWriter writer = new FileWriter(fileToWrite, dontOverwrite);
         
         writer.append(givenName + "\t");
-        writer.append(username + "\t");
+        writer.append(lastname + "\t");
         writer.append(email + "\t");
         writer.append(phoneNumber + "\n");
 
@@ -165,13 +167,13 @@ class Agenda {
 
 class User implements Serializable {
     private String givenName;
-    private String username;
+    private String lastname;
     private String email;
     private String phoneNumber;
 
-    public User(String givenName, String username, String email, String phoneNumber) {
+    public User(String givenName, String lastname, String email, String phoneNumber) {
         this.givenName = givenName;
-        this.username = username;
+        this.lastname = lastname;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
@@ -181,7 +183,7 @@ class User implements Serializable {
         StringBuilder result = new StringBuilder();
 
         result.append("Given Name: " + givenName);
-        result.append("\nUsername: " + username);
+        result.append("\nLastname: " + lastname);
         result.append("\nEmail: " + email);
         result.append("\nPhone number: " + phoneNumber);
 
