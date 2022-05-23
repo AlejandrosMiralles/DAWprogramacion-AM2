@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Agenda",
+            "request": "launch",
+            "mainClass": "Control04.Agenda",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch TopWords_MostUsedWordsInAText",
             "request": "launch",
             "mainClass": "Java.TopWords_MostUsedWordsInAText",
