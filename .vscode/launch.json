@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TopWords_MostUsedWordsInAText",
+            "request": "launch",
+            "mainClass": "Java.TopWords_MostUsedWordsInAText",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
             "name": "Launch ClienteDB",
             "request": "launch",
             "mainClass": "ClienteDB",
