@@ -1,6 +1,7 @@
 package Control04;
 
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ class Agenda {
         String givenName;
         String username;
         String email;
-        int phoneNumber;
+        String phoneNumber;
         User userToWrite;
 
         Scanner input = new Scanner(System.in);
@@ -31,7 +32,7 @@ class Agenda {
         givenName = input.next();
         username = input.next();
         email = input.next();
-        phoneNumber = input.nextInt();
+        phoneNumber = input.next();
 
         input.close();
 
@@ -42,7 +43,7 @@ class Agenda {
         writeUsersAsObjects(userToWrite);
     }
 
-    public static void userWriter(String givenName, String username, String email, int phoneNumber)
+    public static void userWriter(String givenName, String username, String email, String phoneNumber)
                 throws IOException {
         User userToWrite = new User(givenName, username, email, phoneNumber);
 
@@ -50,7 +51,7 @@ class Agenda {
         writeUsersAsObjects(userToWrite);
     }
 
-    private static void writeUsersAsText(String givenName, String username, String email, int phoneNumber) 
+    private static void writeUsersAsText(String givenName, String username, String email, String phoneNumber) 
                                         throws IOException{
         File fileToWrite = new File(path + usersAsTextFileName);
         boolean dontOverwrite = true;
@@ -62,7 +63,7 @@ class Agenda {
         writer.append(givenName + "\t");
         writer.append(username + "\t");
         writer.append(email + "\t");
-        writer.append("" + phoneNumber);
+        writer.append(phoneNumber + "\n");
 
 
         writer.close();
@@ -74,7 +75,8 @@ class Agenda {
 
         fileToWrite.createNewFile();
 
-        ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(fileToWrite, dontOverwrite));
+        ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(
+                                                            fileToWrite, dontOverwrite));
 
         writer.writeObject(userToWrite);
 
@@ -86,7 +88,7 @@ class Agenda {
         for (int usersWritten = 0; usersWritten < args.length / 4; usersWritten++) {
             int newUserPosition = usersWritten * 4;
             userWriter(args[newUserPosition + 0], args[newUserPosition + 1],
-                    args[newUserPosition + 2], Integer.parseInt(args[newUserPosition + 3]));
+                    args[newUserPosition + 2], args[newUserPosition + 3]);
         }
     }
 
@@ -100,21 +102,22 @@ class Agenda {
             String[] userInfo;
             User userToPrint;
             String userRead = reader.readLine();
-            while(userRead != null && ( userInfo = userRead.split(" ") ).length == 4){
+            while(userRead != null){
+                userInfo = userRead.split(" +|\t");
                 userToPrint = new User(userInfo[0], userInfo[1], userInfo[2], 
-                                                Integer.parseInt(userInfo[3]));
+                                                userInfo[3]);
 
                 System.out.println(userToPrint + "\n");
 
 
                 userRead = reader.readLine();
             }
-            
+            //Nunca llega aquí
             reader.close();
         } catch (FileNotFoundException e) {
             //No se ha encontrado el fichero, ergo o aún no se ha creado  o se ha borrado
             return ;
-        }
+        } 
     }
 
     public static void printObjectUsers() throws IOException, ClassNotFoundException{
@@ -123,11 +126,15 @@ class Agenda {
         try {
             ObjectInputStream reader = new ObjectInputStream(new FileInputStream(fileToRead));
 
-            User userToPrint = (User) reader.readObject(); 
-            while(userToPrint != null){
-                System.out.println(userToPrint.toString() + "\n");
+            try {
+                User userToPrint = (User) reader.readObject(); 
+                while(userToPrint != null){
+                    System.out.println(userToPrint.toString() + "\n");
 
-                userToPrint = (User) reader.readObject();
+                    userToPrint = (User) reader.readObject();
+                }
+            } catch (EOFException e) {
+                reader.close();
             }
 
             reader.close();
@@ -142,15 +149,13 @@ class Agenda {
             mainUsedInTheShell(args);
         }
 
-        //TODO: hacer código para testear
+        //TODO: hacer código para depurar
         
         try {
-            userWriter("pepe", "Garcia", "elchulo@sf.es", 34656446);
-            userWriter("Manolo", "Perez", "elguaperas@internet.com", 3453456);
+            writeUsersAsObjects(new User("pepe", "Garcia", "elchulo@sf.es", "34656446"));
+            writeUsersAsObjects(new User("Manolo", "Perez", "elguaperas@internet.com", "3453456"));
 
-            System.out.println("Leyendo desde el fichero de texto:");
-            printTextUsers();
-            System.out.println("\n\n\nLeyendo el fichero de objetos: ");
+            System.out.println("Leyendo el fichero de objetos: ");
             printObjectUsers();
         } catch (Exception e) {
             System.err.println(e);
@@ -162,9 +167,9 @@ class User implements Serializable {
     private String givenName;
     private String username;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
 
-    public User(String givenName, String username, String email, int phoneNumber) {
+    public User(String givenName, String username, String email, String phoneNumber) {
         this.givenName = givenName;
         this.username = username;
         this.email = email;
@@ -178,8 +183,7 @@ class User implements Serializable {
         result.append("Given Name: " + givenName);
         result.append("\nUsername: " + username);
         result.append("\nEmail: " + email);
-        result.append("\nPhone number: ");
-        result.append(phoneNumber);
+        result.append("\nPhone number: " + phoneNumber);
 
         return result.toString();
     }
