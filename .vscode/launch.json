@@ -9,6 +9,13 @@
             "name": "Launch Agenda",
             "request": "launch",
             "mainClass": "Control04.Agenda",
+            "projectName": "DAWprogramacion-AM2_f8f5e6ad"
+        },
+        {
+            "type": "java",
+            "name": "Launch Agenda",
+            "request": "launch",
+            "mainClass": "Control04.Agenda",
             "projectName": "DAWprogramacion-AM2_5ab33801"
         },
         {

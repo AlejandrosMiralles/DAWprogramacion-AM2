@@ -75,25 +75,47 @@ class Agenda {
         File fileToWrite = new File(path + usersAsObjectsFileName);
         boolean dontOverwrite = true;
 
-        fileToWrite.createNewFile();
-
-        ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(
-                                                            fileToWrite, dontOverwrite));
-
+        ObjectOutputStream writer;
+        boolean validFile = ! fileToWrite.createNewFile() && isStoringObjects(fileToWrite);
+        if (validFile){
+            writer = new MyObjectOutputSteam(new FileOutputStream(fileToWrite, dontOverwrite));
+        }else{  
+            writer = new ObjectOutputStream(new FileOutputStream(fileToWrite));
+        }
+        
         writer.writeObject(userToWrite);
 
         writer.close();
     }
 
-    private static void mainUsedInTheShell(String[] args) throws Exception {
-        //TODO: "destruir" este método cuando haya terminado de depurar
-        for (int usersWritten = 0; usersWritten < args.length / 4; usersWritten++) {
-            int newUserPosition = usersWritten * 4;
-            userWriter(args[newUserPosition + 0], args[newUserPosition + 1],
-                    args[newUserPosition + 2], args[newUserPosition + 3]);
+    private static boolean isStoringObjects(File file) throws IOException{
+        boolean isStoringObject;
+
+        ObjectInputStream checker = new ObjectInputStream(new FileInputStream(file));
+
+        try {
+            Object objectRead = checker.readObject();
+
+            isStoringObject = (objectRead != null) ? true : false;
+
+            checker.close();
+            return isStoringObject;
+        } catch (Exception e) {
+            isStoringObject = false;
+            return isStoringObject;
         }
     }
+    
+    private static class MyObjectOutputSteam extends ObjectOutputStream {
+        MyObjectOutputSteam(FileOutputStream steam) throws IOException{
+            super(steam);
+        }
 
+        @Override
+        protected void writeStreamHeader() throws IOException {
+            //Nothing
+        }
+    }
 
     public static void printTextUsers() throws IOException{
         File fileToRead = new File(path + usersAsTextFileName);
@@ -129,11 +151,13 @@ class Agenda {
             ObjectInputStream reader = new ObjectInputStream(new FileInputStream(fileToRead));
 
             try {
-                User userToPrint = (User) reader.readObject(); 
+                Object userToPrint = reader.readObject(); 
                 while(userToPrint != null){
-                    System.out.println(userToPrint.toString() + "\n");
+                    if (userToPrint instanceof User){
+                        System.out.println(userToPrint.toString() + "\n");
+                    }
 
-                    userToPrint = (User) reader.readObject();
+                    userToPrint =  reader.readObject();
                 }
             } catch (EOFException e) {
                 reader.close();
@@ -148,19 +172,11 @@ class Agenda {
    
     public static void main(String[] args) throws Exception {
         if (args.length > 0) {
-            mainUsedInTheShell(args);
-        }
-
-        //TODO: hacer código para depurar
-        
-        try {
-            writeUsersAsObjects(new User("pepe", "Garcia", "elchulo@sf.es", "34656446"));
-            writeUsersAsObjects(new User("Manolo", "Perez", "elguaperas@internet.com", "3453456"));
-
-            System.out.println("Leyendo el fichero de objetos: ");
-            printObjectUsers();
-        } catch (Exception e) {
-            System.err.println(e);
+            for (int usersWritten = 0, newUserPosition; usersWritten < args.length / 4; usersWritten++) {
+                newUserPosition = usersWritten * 4;
+                userWriter(args[newUserPosition + 0], args[newUserPosition + 1],
+                        args[newUserPosition + 2], args[newUserPosition + 3]);
+            }
         }
     }
 }
