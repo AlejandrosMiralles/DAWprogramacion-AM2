@@ -18,15 +18,19 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 class Agenda {
+    //Files' path
     private static final String path = "Controles/Control04/";
+    //File that stores the User's fields
     private static final String usersAsTextFileName = "agenda.dat";
+    //File that stores an User object
     private static final String usersAsObjectsFileName = "agendaObjects.dat";
 
+    //Ask the values of a new User and it writes them down on agenda.dat and agendaObjects.dat 
     public static void userWriter() throws IOException {
         String givenName;
         String lastname;
         String email;
-        String phoneNumber;
+        int phoneNumber;
         User userToWrite;
 
         Scanner input = new Scanner(System.in);
@@ -34,7 +38,7 @@ class Agenda {
         givenName = input.next();
         lastname = input.next();
         email = input.next();
-        phoneNumber = input.next();
+        phoneNumber = input.nextInt();
 
         input.close();
 
@@ -45,7 +49,8 @@ class Agenda {
         writeUsersAsObjects(userToWrite);
     }
 
-    public static void userWriter(String givenName, String lastname, String email, String phoneNumber)
+    //Writes a new User, whose values are the given parameters, on agenda.dat and agendaObjects.dat
+    public static void userWriter(String givenName, String lastname, String email, int phoneNumber)
                 throws IOException {
         User userToWrite = new User(givenName, lastname, email, phoneNumber);
 
@@ -53,7 +58,12 @@ class Agenda {
         writeUsersAsObjects(userToWrite);
     }
 
-    private static void writeUsersAsText(String givenName, String lastname, String email, String phoneNumber) 
+    /**
+     * Writes the given User's field on Agenda.dat.
+     * Each line of the file represents an user and looks like this: 
+     *              givenName/tlastname/temail/tphonenumber
+     */
+    private static void writeUsersAsText(String givenName, String lastname, String email, int phoneNumber) 
                                         throws IOException{
         File fileToWrite = new File(path + usersAsTextFileName);
         boolean dontOverwrite = true;
@@ -71,6 +81,10 @@ class Agenda {
         writer.close();
     }
 
+    /**
+     * Writes the given User on AgendaObjects.dat
+     * It's written with ObjectOutputSteam.writeObject(), so it can only be read with ObjectInputSteam.readObject()
+     */
     private static void writeUsersAsObjects(User userToWrite) throws IOException {
         File fileToWrite = new File(path + usersAsObjectsFileName);
         boolean dontOverwrite = true;
@@ -78,7 +92,7 @@ class Agenda {
         ObjectOutputStream writer;
         boolean validFile = ! fileToWrite.createNewFile() && isStoringObjects(fileToWrite);
         if (validFile){
-            writer = new MyObjectOutputSteam(new FileOutputStream(fileToWrite, dontOverwrite));
+            writer = new MyOwnObjectOutputStream(new FileOutputStream(fileToWrite, dontOverwrite));
         }else{  
             writer = new ObjectOutputStream(new FileOutputStream(fileToWrite));
         }
@@ -88,6 +102,7 @@ class Agenda {
         writer.close();
     }
 
+    // Checks if the given File is storing a Java object
     private static boolean isStoringObjects(File file) throws IOException{
         boolean isStoringObject;
 
@@ -106,17 +121,7 @@ class Agenda {
         }
     }
     
-    private static class MyObjectOutputSteam extends ObjectOutputStream {
-        MyObjectOutputSteam(FileOutputStream steam) throws IOException{
-            super(steam);
-        }
-
-        @Override
-        protected void writeStreamHeader() throws IOException {
-            //Nothing
-        }
-    }
-
+    //Prints the Users written in Agenda.dat
     public static void printTextUsers() throws IOException{
         File fileToRead = new File(path + usersAsTextFileName);
         
@@ -129,7 +134,7 @@ class Agenda {
             while(userRead != null){
                 userInfo = userRead.split(" +|\t");
                 userToPrint = new User(userInfo[0], userInfo[1], userInfo[2], 
-                                                userInfo[3]);
+                                                Integer.parseInt(userInfo[3]));
 
                 System.out.println(userToPrint + "\n");
 
@@ -144,6 +149,7 @@ class Agenda {
         } 
     }
 
+    //Prints the Users written in AgendaObject.dat
     public static void printObjectUsers() throws IOException, ClassNotFoundException{
         File fileToRead = new File(path + usersAsObjectsFileName);
 
@@ -175,19 +181,20 @@ class Agenda {
             for (int usersWritten = 0, newUserPosition; usersWritten < args.length / 4; usersWritten++) {
                 newUserPosition = usersWritten * 4;
                 userWriter(args[newUserPosition + 0], args[newUserPosition + 1],
-                        args[newUserPosition + 2], args[newUserPosition + 3]);
+                        args[newUserPosition + 2], Integer.parseInt(args[newUserPosition + 3]));
             }
         }
     }
 }
 
+//A java class that is serializable
 class User implements Serializable {
     private String givenName;
     private String lastname;
     private String email;
-    private String phoneNumber;
+    private int phoneNumber;
 
-    public User(String givenName, String lastname, String email, String phoneNumber) {
+    public User(String givenName, String lastname, String email, int phoneNumber) {
         this.givenName = givenName;
         this.lastname = lastname;
         this.email = email;
@@ -201,7 +208,7 @@ class User implements Serializable {
         result.append("Given Name: " + givenName);
         result.append("\nLastname: " + lastname);
         result.append("\nEmail: " + email);
-        result.append("\nPhone number: " + phoneNumber);
+        result.append("\nPhone number: "); result.append(phoneNumber);
 
         return result.toString();
     }
