@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ClienteDB",
+            "request": "launch",
+            "mainClass": "InicioABasesDeDatos.ClienteDB",
+            "projectName": "DAWprogramacion-AM2_5ab33801"
+        },
+        {
+            "type": "java",
             "name": "Launch Agenda",
             "request": "launch",
             "mainClass": "Control04.Agenda",

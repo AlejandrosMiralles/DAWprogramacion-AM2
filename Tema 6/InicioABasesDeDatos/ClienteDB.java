@@ -1,3 +1,5 @@
+package InicioABasesDeDatos;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,17 +13,17 @@ public class ClienteDB {
 
     public ClienteDB(String urlDataBase, String user, String password) throws Exception {
         Context context = new InitialContext();
-        DataSource datasource = (DataSource)context.lookup(urlDataBase);
-        connection = datasource.getConnection(user, password);
+        // DataSource datasource = (DataSource)context.lookup(urlDataBase);
+        // connection = datasource.getConnection(user, password);
 
-        /*
+        // /*
         connection = DriverManager.getConnection(urlDataBase, user, password);
-        */
+        // */
     }
 
     public static void main(String[] args) {
         try {
-            String urlDataBase = "jdbc:mysql://192.168.204.179/phpmyadmin";
+            String urlDataBase = "jdbc:mysql://10.0.2.4/phpmyadmin";
             ClienteDB tester = new ClienteDB(urlDataBase, "phpmyadmin", "phpmyadmin");
         
             System.out.println("Se ha conectado!!");

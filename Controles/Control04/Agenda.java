@@ -1,7 +1,5 @@
 package Control04;
 
-//http://www.chuidiang.org/java/ficheros/ObjetosFichero.php
-
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -184,6 +182,20 @@ class Agenda {
                         args[newUserPosition + 2], Integer.parseInt(args[newUserPosition + 3]));
             }
         }
+
+        //*
+        try {
+            userWriter("pepe", "Garcia", "elchulo@sf.es", 34656446);
+            userWriter();
+
+            System.out.println("\nLeyendo desde el fichero de texto:");
+            printTextUsers();
+            System.out.println("\n\n\nLeyendo el fichero de objetos: ");
+            printObjectUsers();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        // */
     }
 }
 

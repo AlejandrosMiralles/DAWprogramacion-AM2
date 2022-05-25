@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 * By default, ObjectOutputStream always writes a header whenever it's open.
 * As a result, it's impossible to add an object to an ObjectFile without corrupting it.
 * This class doesn't write a header, so it can be used to add objects to an already object storer file 
+* For more information --> http://www.chuidiang.org/java/ficheros/ObjetosFichero.php
 */
 public class MyOwnObjectOutputStream extends ObjectOutputStream {
     MyOwnObjectOutputStream(FileOutputStream steam) throws IOException{
