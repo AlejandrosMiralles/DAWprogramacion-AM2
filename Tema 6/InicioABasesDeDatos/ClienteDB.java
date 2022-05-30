@@ -7,11 +7,8 @@ import java.sql.SQLException;
 import java.sql.SQLTimeoutException;
 import java.sql.Statement;
 
-import javax.sql.DataSource;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
 import Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.Cliente;
+import Gestion_Del_Contenido_De_Ficheros.ControlFicherosDatosDelCliente.Persona;
 
 //Solución? https://linuxhint.com/ssh-permission-denied-publickey-error/
 
@@ -57,11 +54,37 @@ public class ClienteDB {
     
     }
 
+    public boolean insertCliente(Cliente clienteToAdd){
+        boolean hasBeenAdded;
+
+        final String sentencia = "insert into Cliente (nombre, apellidos, email, nif) values (" +
+                        clienteToAdd.getNombre() + ", " + clienteToAdd.getApellidos() + ", " +
+                        clienteToAdd.getEmail() + ", " + clienteToAdd.getNif() + ")";
+
+        try {
+            Statement statement = connection.createStatement();
+    
+            statement.executeUpdate(sentencia);
+            
+            hasBeenAdded = true;
+        } catch (SQLException e) {
+            hasBeenAdded = false;
+
+            System.out.println(e);;
+        }
+
+        return hasBeenAdded;
+    }
+
     public static void main(String[] args) {
         try {
             String urlDataBase = "jdbc:mysql://10.0.2.4/clientes";
             ClienteDB tester = new ClienteDB(urlDataBase, "phpmyadmin", "phpmyadmin");
             
+            Cliente clienteToAdd = new Cliente("235434", "Juliont", "MiercolesALasOcho", "hacerLa@renta.es");
+
+            tester.insertCliente(clienteToAdd);
+
             tester.printTable();
 
         } catch (Exception e) {

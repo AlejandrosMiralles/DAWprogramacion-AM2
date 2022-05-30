@@ -7,22 +7,22 @@ public class Persona implements Serializable {
     protected String nombre;
     protected String apellidos;
 
-    protected String getNif() {
+    public String getNif() {
         return nif;
     }
-    protected void setNif(String nif) {
+    public void setNif(String nif) {
         this.nif = nif;
     }
-    protected String getNombre() {
+    public String getNombre() {
         return nombre;
     }
-    protected void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    protected String getApellidos() {
+    public String getApellidos() {
         return apellidos;
     }
-    protected void setApellidos(String apellidos) {
+    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 }
